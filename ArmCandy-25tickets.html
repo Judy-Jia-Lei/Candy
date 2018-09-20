@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <title>Arm Candy-25tickets</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+      
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+        
+        <style>
+            
+            * {box-sizing:border-box}
+             body {font-family:sans-serif;background-color:#F2F1F1}
+            .bgimg {background-image:url(gig-image/electronic%20guitar.jpg);background-position: center;background-size: cover;background-repeat: no-repeat;min-height:100%;filter:grayscale(30%);}
+            .border-5 {border-width:5px!important}
+            .opacity {opacity:0.9}
+            .opacity-hover:hover {opacity:0.8}
+            .opacity-lg {opacity:0.8}
+            .hover-opacity-off:hover {opacity:1.0}
+            
+            .display-middle {position:absolute;top:52%;left:50%;transform:translate(-50%,-50%);}
+            .display-top {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+            .icon-size {font-size: 24px;}
+            .hover-pink-text:hover {color:#CA858F!important}
+            .text-pink {color:#CA858F}
+            .hover-white:hover {color:white!important}
+            .hover-info:hover {background-color:#40CEBF!important} 
+            
+            .grayscale {filter:grayscale(80%)}
+            .line-height-s {line-height: 1.0}
+            .bg-grey {background-color:#F3F0F1}
+            .font-size-26 {font-size:28px}
+            .pb-6 {padding-bottom:20px}
+            
+            .cursor {cursor:pointer}
+            .transition {transition:background 0.45s ease-in-out}
+            
+            @media (max-width:700px) {.pt-sm {padding-top: 30px!important};.hide-small {display:none!important};}
+            
+            @media (max-width:992px) and (min-width:701px) {.pt-lg {padding-top: 135px!important};.hide-medium {display:none!important};}
+            
+            @media (min-width:993px) {.pt-lg {padding-top: 135px!important};.hide-large {display:none!important};}
+            
+          
+            .myBtnContainer0 {width:65px;height:190px;text-align: center;} 
+            .badge {width:40px;height:36px;opacity:0.7;color:white;}
+             div.scrollmenu-y {overflow-y:scroll;white-space: nowrap;}
+            .borderless td {border: none;}
+            .color-pink {background-color:#CA858F}
+            .transition {transition:background 0.45s ease-in-out}
+            .col-3-0 {width:30%}
+            .col-4-0 {width:40%}
+            ::-webkit-scrollbar {display:none;}
+            .w-33 {width:33.33%}
+            .font-lg {font-size:23px;}
+            .font-sm {font-size:10px;word-spacing: 6px}
+            #timer {line-height: 100%}
+            #demo {font-size: 20px;font-weight: bold;word-spacing: 4px;}
+            table#timerTb td{padding:0 2px 0 2px!important;}
+            .letter-space {letter-spacing: 0.6px}
+            .word-space {word-spacing: normal}
+    
+    /*ticket table */        
+            table#t01 {
+                border-collapse:separate;
+                border:solid #CA858F 1px;
+                border-radius:6px;
+                -moz-border-radius:6px;
+                border-spacing:10px;
+            }
+            
+            table#t01 th {
+                border-bottom:solid #CA858F 1px;
+            }
+            table#t01 td {
+                border:solid #CA858F 1px;
+            }
+            
+            .numBorder {
+                border:1px solid #CA858F;
+                border-radius: 4px;
+                background-color:#CA858F;
+                color:white;
+                padding-right:2px;
+                padding-left:2px;
+                font-size: 11.5px;
+            }
+            
+            ::-webkit-input-placeholder {
+                text-align: center;
+            }
+
+            :-moz-placeholder { /* Firefox 18- */
+                text-align: center;  
+            }
+
+            ::-moz-placeholder {  /* Firefox 19+ */
+                text-align: center;  
+            }
+
+            :-ms-input-placeholder {  
+                text-align: center; 
+            }
+            
+            .w-25 {width:25%}
+            .change-answer {}
+           
+            @keyframes shake {
+              10%, 90% {
+                transform: translate3d(-1px, 0, 0);
+              }
+
+              20%, 80% {
+                transform: translate3d(2px, 0, 0);
+              }
+
+              30%, 50%, 70% {
+                transform: translate3d(-4px, 0, 0);
+              }
+
+              40%, 60% {
+                transform: translate3d(4px, 0, 0);
+              }
+            }
+
+            .apply-shake {
+                animation: shake 0.2s cubic-bezier(.36,.07,.19,.97) both;
+            }
+            
+    /* custom alert box*/
+            .alertbox {
+                width:400px;
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                color:black;
+                background:#CA858F;
+                box-shadow: 0 0 20px #CA858F;
+                border-radius: 8px;
+                overflow: hidden;
+                text-align: center;
+                padding: 10px;
+                z-index: 9999;
+                display: none;
+            }
+            
+            .alertbox span{
+                color:#2ecc71;
+                font-size:40px;
+                display:block;
+                margin:20px 0;
+            }
+        
+        </style>
+        
+    </head>
+    <body> 
+        <div class="container bg-grey d-none d-md-block" style="height:25px">
+            <p class="text-right text-secondary pt-1 small">Arm Candy is powered by  Gear Digital</p>
+        </div>
+        <div class="container bg-white">
+<!--navbar in pc-->
+            <div class="container">
+                <div class="d-none d-md-block">
+                    <nav class="navbar navbar-light navbar-expand-md justify-content-between pb-0">
+                        <div class="w-33 text-center">
+                            <div class="border d-none d-md-block" style="width:200px">
+                                <div class="pt-2 pb-2 pl-2 pr-2">
+                                    <span class="text-pink">NEXT WINNER IN</span><br>
+                                    <div id="timer">
+                                        <span id="demo" class="pl-2"></span><br>
+                                        <span class="font-sm">DAYS HOURS MINS SECS</span>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/" class="navbar-brand text-center w-33">
+                            <img class="opacity hover-opacity-off" src="armcandy-image/logo.png" width=100px height="60px" alt="ArmCandy">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse dual-nav w-33">
+                            <div class="d-flex flex-row ml-auto p-2">
+                                <div><a href="https://www.facebook.com/ArmCandyHB/" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-facebook text-primary p-1"></i></a></div>
+                                <div><a href="#" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-instagram text-info p-1"></i></a></div>
+                                <div><a href="#" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-twitter p-1"></i></a></div>
+                                <div><a href="https://www.youtube.com/channel/UChppZlhT1ljTGlKYuih15oQ" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-youtube text-danger p-1"></i></a></div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <div class="container">
+                        <div class="navbar-collapse collapse border-top border-bottom mb-2">
+                            <ul class="navbar-nav nav-fill w-100">
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">CHOOSE YOUR BAG</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">HOW TO WIN</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">RESULTS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">WINNERS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">ABOUT US</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">CONTACT US</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+<!--navbar in mobil-->
+                <div class="d-block d-md-none">
+                    <nav class="navbar navbar-expand-md navbar-light" style="margin-bottom:-10px;margin-top:-28px">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation" style="margin-left:-30px">
+                            <small><span class="navbar-toggler-icon"></span></small>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img class="opacity hover-opacity-off" src="armcandy-image/logo.png" width=70px height="40px" alt="ArmCandy">
+                        </a>
+                        <a class="" href="#">
+                            <img class="opacity hover-opacity-off" src="armcandy-image/geardigital.jpg" width=40px height="20px" alt="geardigital" style="margin-right:-30px">
+                        </a>
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-center">
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">CHOOSE YOUR BAG</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">HOW TO WIN</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">RESULTS</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">WINNERS</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">ABOUT US</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">CONTACT US</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+<!--count down time in mobile-->            
+            <div class="border-top border-bottom d-block d-md-none mb-2">
+                <div class="pl-2 pr-2 text-center"> 
+                    <table id="timerTb" class="mx-auto">
+                        <tr>
+                            <td rowspan="2" class="small">NEXT WINNER IN</td>
+                            <td id="days" class="small text-pink"></td>
+                            <td id="hours" class="small text-pink"></td>
+                            <td id="minutes" class="small text-pink"></td>
+                            <td id="seconds" class="small text-pink"></td>
+                        </tr>
+                        <tr>
+                            <td class="font-sm text-pink">DAYS</td>
+                            <td class="font-sm text-pink">HOURS</td>
+                            <td class="font-sm text-pink">MINS</td>
+                            <td class="font-sm text-pink">SECS</td>
+                        </tr>
+                    </table>
+                    <span id="demo-1" class="small"></span>
+                </div>
+            </div>
+       
+            <div class="bg-grey d-none d-md-block">
+                <p class="text-center p-3 font-size-26">EVERY TICKET OFFERS YOU A CHANCE TO WIN!</p>
+            </div>
+            
+            <div>
+                <div class="row pb-4">
+                    <div class="col-12 col-lg-4 text-center">
+                        <div class="pt-5 mt-4"><iframe width="350" height="196.875" src="https://www.youtube.com/embed/org7gR1odqg?rel=0&autoplay=1&loop=1&playlist=org7gR1odqg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <h4 class="text-center font-weight-bold">GUESS THE SWEETS <br> WIN YOUR Dior</h4>
+                        <p class="text-center text-muted"><small>The closest guess to the actual number of sweets <br>WINS the bag!</small></p>
+<!--guess-->                        
+                        <div class="pt-3 pb-3 mt-3 text-center border mx-auto" style="width:300px">
+                            <div id="shake">Your First Guess</div>
+                            <span id="answerNum" class="pt-2 pb-2 pr-3 pl-3 mr-2 rounded text-white color-pink small">1</span>
+                            <input id="input" style="text" name="ph" placeholder="????" class="text-center text-pink">
+                            <button id="add" type="submit" onclick=add() class="pt-1 pb-1 pr-2 pl-2 ml-2 rounded text-white color-pink small border-0 opacity hover-opacity-off cursor">ADD</button>
+                        </div>
+                        <div class="text-center pt-5">
+                            <button id="playAlertButton" type="button" class="pt-1 pb-1 pr-2 pl-2 ml-2 rounded text-white color-pink border-0 opacity hover-opacity-off cursor" onclick="subT()">Play Your Tickets</button>
+                        </div>
+                        
+                        <div id="playAlertbox" class="alertbox">
+                            <h5 class="p-2 text-white">Your Tickets Have Submitted Successfully. <br>Get more tickets to increase the chance of winning YOUR Dior.</h5>
+                            <button class="btn-info btn-sm opacity cursor pt-2 pb-2 pr-3 pl-3 rounded" onclick="closePlay()">Close</button>
+                        </div>
+                        
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="container pt-2 pb-5 pb-lg-0">
+                            <table id="t01" class="w-100 text-center">
+                                <tr>
+                                    <th colspan="4" class="text-pink">Your Tickets & Play</th>
+                                </tr>
+                                <tr>
+                                    <td class="w-25 p-1"><span id="answer1-1" class="float-left numBorder">1</span> <span id="answer1" onclick=changeAnswer(this) style="font-family: Filson Pro"></span></td> 
+                                    <td class="w-25 p-1"><span id="answer2-1" class="float-left numBorder">2</span> <span id="answer2" onclick=changeAnswer(this)></span></td>
+                                    <td class="w-25 p-1"><span id="answer3-1" class="float-left numBorder">3</span> <span id="answer3" onclick=changeAnswer(this)></span></td>
+                                    <td class="w-25 p-1"><span id="answer4-1" class="float-left numBorder">4</span> <span id="answer4" onclick=changeAnswer(this)></span></td>
+                                </tr> 
+                                <tr>
+                                    <td class="w-25 p-1"><span id="answer5-1" class="float-left numBorder">5</span> <span id="answer5" onclick=changeAnswer(this)></span></td> 
+                                    <td class="w-25 p-1"><span id="answer6-1" class="float-left numBorder">6</span> <span id="answer6" onclick=changeAnswer(this)></span></td>
+                                    <td class="w-25 p-1"><span id="answer7-1" class="float-left numBorder">7</span> <span id="answer7" onclick=changeAnswer(this)></span></td>
+                                    <td class="w-25 p-1"><span id="answer8-1" class="float-left numBorder">8</span> <span id="answer8" onclick=changeAnswer(this)></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="w-25 p-1"><span id="answer9-1" class="float-left numBorder">9</span> <span id="answer9" onclick=changeAnswer(this)></span></td> 
+                                    <td class="w-25 p-1"><span id="answer10-1" class="float-left numBorder">10</span> <span id="answer10" onclick=changeAnswer(this)></span></td>
+                                    <td class="w-25 p-1"><span id="answer11-1" class="float-left numBorder">11</span> <span id="answer11" onclick=changeAnswer(this)></span></td>
+                                    <td class="w-25 p-1"><span id="answer12-1" class="float-left numBorder">12</span> <span id="answer12" onclick=changeAnswer(this)></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="w-25 p-1"><span id="answe13-1" class="float-left numBorder">13</span> <span id="answer13" onclick=changeAnswer(this)></span></td> 
+                                    <td class="w-25 p-1"><span id="answer14-1" class="float-left numBorder">14</span> <span id="answer14" onclick=changeAnswer(this)></span></td>
+                                    <td class="w-25 p-1"><span id="answer15-1" class="float-left numBorder">15</span> <span id="answer15" onclick=changeAnswer(this)></span></td>
+                                    <td class="w-25 p-1"><span id="answer16-1" class="float-left numBorder">16</span> <span id="answer16" onclick=changeAnswer(this)></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="w-25 p-1"><span id="answe17-1" class="float-left numBorder">17</span> <span id="answer17" onclick=changeAnswer(this)></span></td> 
+                                    <td class="w-25 p-1"><span id="answer18-1" class="float-left numBorder">18</span> <span id="answer18" onclick=changeAnswer(this)></span></td>
+                                    <td class="w-25 p-1"><span id="answer19-1" class="float-left numBorder">19</span> <span id="answer19" onclick=changeAnswer(this)></span></td>
+                                    <td class="w-25 p-1"><span id="answer20-1" class="float-left numBorder">20</span> <span id="answer20" onclick=changeAnswer(this)></span></td>
+                                </tr>
+                                <tr>
+                                    <td class="w-25 p-1"><span id="answer21-1" class="float-left numBorder">21</span> <span id="answer21" onclick=changeAnswer(this)></span></td>
+                                    <td class="w-25 p-1"><span id="answer22-1" class="float-left numBorder">22</span> <span id="answer22" onclick=changeAnswer(this)></span></td>
+                                    <td class="w-25 p-1"><span id="answer23-1" class="float-left numBorder">23</span> <span id="answer23" onclick=changeAnswer(this)></span></td>
+                                    <td class="w-25 p-1"><span id="answer24-1" class="float-left numBorder">24</span> <span id="answer24" onclick=changeAnswer(this)></span></td> 
+                                </tr>
+                                 <tr>
+                                    <td class="w-25 p-1"><span id="answer25-1" class="float-left numBorder">25</span> <span id="answer25" onclick=changeAnswer(this)></span></td> 
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--toggle between count and win-->           
+            <div style="background-color:#FCF7F8">
+                <div class="pt-3 mx-auto" style="width:300px;z-index: 999;">
+                    <span id="countBtn" onclick=count() class="p-3 border-top border-left" style="background-color:#FFFFFF;margin-right:-3px">The Official Count</span>
+                    <span id="winBtn" onclick=win() class="p-3 border-top border-left border-right" style="background-color:#FCF7F8">How To Win</span>
+                </div>
+                <div id="count" class="text-center p-5 border" style="background-color:#FFFFFF;margin-top:12px;font-family: Adobe Garamond Pro;font-style:italic">
+                    You have until Sunday 26th of August 2018 at 23:59 to submit your entry.<br>The official count will be made as soon as possible after this date.<br>The count will be filmed and published on our YouTube channel. The final number will be verified by 4pm.<br>
+                    <a href="https://www.youtube.com/channel/UChppZlhT1ljTGlKYuih15oQ" target="_blank"><button class="small mt-2 p-2 bg-danger text-white rounded border-0 opacity hover-opacity-off cursor"><i class="fab fa-youtube pr-1"></i> VISIT OUR YOUTUBE PAGE</button></a>
+                </div>
+                <div id="win" class="text-center p-5 border" style="display:none;background-color:#FFFFFF;margin-top:12px;font-family: Adobe Garamond Pro;font-style:italic">
+                    Choose your dream handbag, and how many tickets you'd like to play.
+                    Each ticket gives you the chance to make a guess at the number of sweets in the jar.<br>
+                    The more guesses you make, the more chance you have of providing the closest guess.<br>
+                    The closest guess wins the dream handbag! <br>
+                    Full rules of play can be viewed in our Terms and conditions.<br>
+                    <a href="https://www.youtube.com/channel/UChppZlhT1ljTGlKYuih15oQ" target="_blank"><button class="small mt-2 p-2 bg-danger text-white rounded border-0 opacity hover-opacity-off cursor"><i class="fab fa-youtube pr-1"></i> VISIT OUR YOUTUBE PAGE</button></a>
+                </div>
+            </div>
+<!--other medias-->            
+            <div class="bg-grey border-bottom d-block d-md-none">
+                <div class="">
+                    <div class="d-flex flex-row justify-content-center p-2">
+                        <div><a href="https://www.facebook.com/ArmCandyHB/" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-facebook text-primary p-1"></i></a></div>
+                        <div><a href="#" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-instagram text-info p-1"></i></a></div>
+                        <div><a href="#" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-twitter p-1"></i></a></div>
+                        <div><a href="https://www.youtube.com/channel/UChppZlhT1ljTGlKYuih15oQ" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-youtube text-danger p-1"></i></a></div>
+                    </div>
+                </div>
+            </div>
+<!--game rule-->     
+            <div class="bg-grey border-bottom">       
+                <div class="row mx-auto pt-5 pb-5" style="max-width:1000px;">
+                    <div class="text-center col-sm-4 line-height-s">
+                        <span style="font-size:50px"><i class="fas fa-shopping-bag text-pink border rounded-circle mb-1" style="padding:20px 25px 20px 25px"></i></span><br>
+                        <span class="font-weight-bold">STEP 1</span><br>
+                        <span class="text-secondary">CHOOSE YOUR BAG</span><br>
+                        <span class="small text-secondary">Selected bags from world leading brands</span>
+                    </div>
+                    <div class="text-center col-sm-4 line-height-s">
+                        <span style="font-size:50px"><i class="fas fa-prescription-bottle text-pink border rounded-circle mb-1" style="padding:20px 25px 20px 25px"></i></span><br>
+                        <span class="font-weight-bold">STEP 2</span><br>
+                        <span class="text-secondary">PLAY YOUR TICKETS</span><br>
+                        <span class="small text-secondary">Guess how many sweets are in the jar</span>
+                    </div>
+                    <div class="text-center col-sm-4 line-height-s">
+                        <span style="font-size:50px"><i class="fas fa-award text-pink border rounded-circle mb-1" style="padding:20px 25px 20px 25px"></i></span><br>
+                        <span class="font-weight-bold">STEP 3</span><br>
+                        <span class="text-secondary">WINNERS SELECTED</span><br>
+                        <span class="small text-secondary">The closest guess wins their chosen bag!</span>
+                    </div>
+                </div>
+            </div>
+            <!--Authority-->   
+            <div class="container text-center pt-2 pb-2 pr-5 pl-5 line-height-s bg-grey">
+                <span class="small">Our count is filmed and authenticated by an independent third-party</span><br>
+                <span class="text-muted small">Anyone connected with Arm Candy or its subsidiary companies are ineligible to play this competition</span>
+            </div>
+<!--footer-->           
+            <div class="container row mx-auto no-gutters p-2" style="background-color:#FFFFFF">
+                <div class="col-sm-1 text-center pt-3 pb-3 pt-sm-0 pb-sm-0"><img src="armcandy-image/logo.png" style="width:60px;height:30px"></div>
+                <div class="col-sm-1 text-center text-pink pt-sm-2" style="font-size:12.5px">01618187110</div>
+                <div class="col-sm-1 font-sm text-center pt-sm-2">info@arm-candy.uk</div>
+                <div class="col-sm-2 col-6 text-right text-sm-center font-sm pt-sm-2 letter-space">Terms&Conditions</div>
+                <div class="col-sm-1 col-6 text-left text-sm-center font-sm pt-sm-2 pl-3 pl-sm-0 word-space">Privacy Policy</div>
+                <div class="col-sm-6 text-sm-right text-center text-muted line-height-s pt-4 pb-4 pt-sm-0 pb-sm-0" style="font-size:9px"><b>Copyright © 2017 ArmCandy. Owned by Gear Digital Ltd.</b><br>Registered Office: 7c Blackfriars House, Parsonage, Manchester, M3 2JA<br>Arm Candy Registration Number 09512370</div>
+            </div>
+        </div>  
+        <div class="container bg-grey d-none d-md-block" style="height:25px"></div>           
+
+        <script>
+//button click sound effect        
+            function playBleep() {
+                var bleep = new Audio();
+                bleep.src = 'bleep.mp3';
+                bleep.play();
+            }
+            
+            function playSelect() {
+                var select = new Audio();
+                select.src = 'select20.mp3';
+                select.play();
+            }
+//guess
+            function add(){
+                var strval = document.getElementById("input").value;
+                var value = parseInt(strval);
+                
+                if (isNaN(value) || value < 1 || strval.length > 4){
+                    document.getElementById("input").value = "";
+                    alert("'" + strval + "' is not a valid number");
+                    return;
+                }
+                
+                for (var answer = 1; answer <= 25; answer++) {
+                    if (document.getElementById("answer" + answer).innerHTML == ""
+                        || document.getElementById("answer" + answer).classList.contains("change-answer")) {
+                        document.getElementById("answer" + answer).innerHTML = value;
+                        document.getElementById("answer" + answer + "-1").style.color = "white";
+                        document.getElementById("answer" + answer + "-1").style.backgroundColor = "#CA858F";
+                        
+                        if (document.getElementById("answer" + (answer+1)).innerHTML == '') {
+                            document.getElementById("answer" + (answer+1) + "-1").style.color = "#CA858F";
+                            document.getElementById("answer" + (answer+1) + "-1").style.backgroundColor = "white";
+                        }
+                        
+                        document.getElementById("input").value = "";
+                        document.getElementById("answerNum").innerHTML = answer;
+                        document.getElementById("answer" + answer).classList.remove("change-answer");
+                        document.getElementById("shake").classList.add("apply-shake");
+                        return;
+                    }  
+                }
+            }
+           
+            function changeAnswer(element){
+                document.getElementById("input").value = element.innerHTML;
+                element.classList.add("change-answer");
+            }
+           
+//disableButtons    ???    
+            window.onload = function() {
+                disableButtons();
+            }
+            
+            function disableButtons() {
+                
+                var disablePlayButton = false;
+                
+                for (var answer = 1; answer <= 25; answer++){
+                    if (document.getElementById("answer" + answer).innerHTML != '') {
+                        disablePlayButton = true;
+                    }
+                }
+                
+                document.getElementById("playAlertButton").disabled = disablePlayButton;
+            }
+                
+//submit all the guesses          
+            function subT() {
+                document.getElementById("playAlertbox").style.display = "block";
+                disableButtons();
+            }
+            
+            function closePlay() {
+                if (document.getElementById("playAlertbox").style.display = "block"){
+                    document.getElementById("playAlertbox").style.display = "none";
+                }
+            }
+            
+//count down timer
+            // Set the date we're counting down to
+            var countDownDate = new Date("2018-10-15T24:00:00").getTime();
+            
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+                
+                // Get todays date and time
+                var now = new Date().getTime();
+                
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+                
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24)).toLocaleString(undefined,{minimumIntegerDigits: 2});
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toLocaleString(undefined,{minimumIntegerDigits: 2});
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toLocaleString(undefined,{minimumIntegerDigits: 2});
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000).toLocaleString(undefined,{minimumIntegerDigits: 2});
+                
+                // Output the result in an element with id="demo"
+              
+                document.getElementById("demo").innerHTML = days + ": " + hours + ": "
+                    + minutes + ": " + seconds + " ";
+                
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+                /*
+                document.getElementById("demo-1").innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";*/
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                    document.getElementById("demo-1").innerHTML = "EXPIRED";
+                }
+            }, 0);
+            
+//toggle between count and win            
+            function win(){
+                document.getElementById("win").style.display = "block";
+                document.getElementById("win").style.backgroundColor = "#FFFFFF";
+                document.getElementById("winBtn").style.backgroundColor = "#FFFFFF";
+                document.getElementById("countBtn").style.backgroundColor = "#FCF7F8";
+                document.getElementById("count").style.display = "none";
+            }
+            function count(){
+                document.getElementById("count").style.display = "block";
+                document.getElementById("countBtn").style.backgroundColor = "#FFFFFF";
+                document.getElementById("winBtn").style.backgroundColor = "#FCF7F8";
+                document.getElementById("win").style.display = "none";
+            }
+        </script>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+    </body>
+</html>
