@@ -304,7 +304,7 @@
                         <p class="text-center text-muted"><small>The closest guess to the actual number of sweets <br>WINS the bag!</small></p>
 <!--guess-->                        
                         <div class="pt-3 pb-3 mt-3 text-center border mx-auto" style="max-width:370px">
-                            <div id="shake">Your First Guess</div>
+                            <div id="shake">Your <span id="answerNum1">First</span> Guess</div>
                             <span id="answerNum" class="pt-2 pb-2 pr-3 pl-3 mr-2 rounded text-white color-pink small">1</span>
                             <input id="input" style="text" name="ph" placeholder="????" class="text-center text-pink">
                             <button id="add" type="submit" onclick=add() class="pt-1 pb-1 pr-2 pl-2 ml-2 rounded text-white color-pink small border-0 opacity hover-opacity-off cursor">ADD</button>
@@ -453,10 +453,11 @@
                 }
             }
             
-//guess
+//guess    
             function add(){
                 var strval = document.getElementById("input").value;
                 var value = parseInt(strval);
+                var a = ['','First ','Second ','Third ','Fourth ', 'Fifth ','Sixth ','Seventh ','Eighth ','Nine ','Tenth ','Eleventh ','Twelfth ','Thirteenth ','Fourteenth ','Fifteenth ','Sixteenth ','Seventeenth ','Eighteenth ','Nineteenth ','Twentieth ','Twenty-first ','Twenty-second ','Twenty-third ','Twenty-fourth ','Twenty-fifth '];
                 
                 if (isNaN(value) || value < 1 || strval.length > 4){
                     document.getElementById("input").value = "";
@@ -471,15 +472,16 @@
                         document.getElementById("answer" + answer + "-1").style.color = "white";
                         document.getElementById("answer" + answer + "-1").style.backgroundColor = "#CA858F";
                         
+                        document.getElementById("input").value = "";
+                        document.getElementById("answer" + answer).classList.remove("change-answer");
+                        document.getElementById("shake").classList.add("apply-shake");
+                        document.getElementById("answerNum").innerHTML = answer;
+                        document.getElementById("answerNum1").innerHTML = a[answer];
+                        
                         if (document.getElementById("answer" + (answer+1)).innerHTML == '') {
                             document.getElementById("answer" + (answer+1) + "-1").style.color = "#CA858F";
                             document.getElementById("answer" + (answer+1) + "-1").style.backgroundColor = "white";
                         }
-                        
-                        document.getElementById("input").value = "";
-                        document.getElementById("answerNum").innerHTML = answer;
-                        document.getElementById("answer" + answer).classList.remove("change-answer");
-                        document.getElementById("shake").classList.add("apply-shake");
                         return;
                     }  
                 }
@@ -489,6 +491,13 @@
                 document.getElementById("input").value = element.innerHTML;
                 element.classList.add("change-answer");
             }
+
+//remove the shake after 1 second            
+            var $post = $("#shake");
+
+            setInterval(function() {
+                $post.removeClass("apply-shake");
+            }, 1000);
            
 //count down timer
             // Set the date we're counting down to
