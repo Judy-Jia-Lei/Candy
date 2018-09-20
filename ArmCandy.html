@@ -3,7 +3,7 @@
 <html>
     
     <head>
-        <title>Arm Candy-3rd</title>
+        <title>Arm Candy-4th</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
@@ -59,6 +59,7 @@
             .col-4-0 {width:33.33%}
             ::-webkit-scrollbar {display:none;}
             
+    /* rounded corner table */        
             table#t01 {
                 border:1px solid #DDE2E6;
                 border-collapse: separate; /*Don't need to note this, since the default setting of border-collapse is seperated*/ 
@@ -95,29 +96,29 @@
             }  
             
     /* custom alert box*/
-            #dialogoverlay{
+            #alertbox {
+                width:400px;
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                color:black;
+                background:#CA858F;
+                box-shadow: 0 0 20px #CA858F;
+                border-radius: 8px;
+                overflow: hidden;
+                text-align: center;
+                padding: 10px;
+                z-index: 9999;
                 display: none;
-                opacity: .8;
-                position: fixed;
-                top: 0px;
-                left: 0px;
-                background: #FFF;
-                width: 100%;
-                z-index: 10;
-            }
-            #dialogbox{
-                display: none;
-                position: fixed;
-                background: #000;
-                border-radius:7px; 
-                width:550px;
-                z-index: 10;
             }
             
-            #dialogbox > div{ background:#FFF; margin:8px; }
-            #dialogbox > div > #dialogboxhead{ background: #666; font-size:19px; padding:10px; color:#CCC; }
-            #dialogbox > div > #dialogboxbody{ background:#333; padding:20px; color:#FFF; }
-            #dialogbox > div > #dialogboxfoot{ background: #666; padding:10px; text-align:right; }
+            #alertbox span{
+                color:#2ecc71;
+                font-size:40px;
+                display:block;
+                margin:20px 0;
+            }
 
         </style>
         
@@ -127,6 +128,12 @@
             <div class="container pt-4">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <div class="container">
+                        <div class="border" style="width:300px">
+                            <div class="pt-2 pb-2 pl-2 pr-2 text-center">
+                                NEXT WINNER IN <br>
+                                <span id="demo"></span>
+                            </div>
+                        </div>
                         <a href="/" class="navbar-brand"><img class="opacity hover-opacity-off" src="armcandy-image/logo.png" width=100px height="60px" alt="ArmCandy"></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar7">
                             <span class="navbar-toggler-icon"></span>
@@ -161,6 +168,12 @@
                 <hr>
             </div>
             
+            <div id="alertbox">
+                <img class="rounded p-3" src="armcandy-image/dior.jpg">
+                <h4 class="p-2">Hi, this is your last ticket. <br>Get more tickets to increase the chance of winning <br>YOUR Dior.</h4>
+                <button class="btn-info opacity cursor pt-2 pb-2 pr-3 pl-3 rounded" onclick="closeBox()">Close</button>
+            </div>
+       
             <div class="bg-grey">
                 <p class="text-center p-3 font-size-26">EVERY TICKET OFFERS YOU A CHANCE TO WIN!</p>
             </div>
@@ -171,7 +184,7 @@
                         <img class="w-100" src="armcandy-image/candy.jpg" alt="candy">
                     </div>
                     <div class="col-12 col-lg-4">
-                        <h4 class="text-center font-weight-bold">GUESS THE SWEETS <br> WIN YOUR CÉLINE</h4>
+                        <h4 class="text-center font-weight-bold">GUESS THE SWEETS <br> WIN YOUR Dior</h4>
                         <p class="text-center text-muted"><small>The closest guess to the actual number of sweets WINS the bag!</small></p>
                         <div class="row pt-3 mx-auto no-gutters">
                             <div id="btnGroup01" class="myBtnContainer0 scrollmenu-y mx-auto">
@@ -467,7 +480,11 @@
                     document.getElementById("answer" + answerNum + "-btn").disabled = (document.getElementById("answer" + answerNum).innerHTML == '');
                 }
             }
-            
+            function closeBox() {
+                if (document.getElementById("alertbox").style.display = "block"){
+                    document.getElementById("alertbox").style.display = "none";
+                }
+            }
             
             function buttonClick(buttonId){
                 var element = buttonId[2] - 1;
@@ -532,11 +549,13 @@
                 {
                     document.getElementById("answer3").innerHTML = current;
                     document.getElementById("current").innerHTML = '0000';
-                    alert("Hi, this is your last ticket. Get more tickets to increase the chance of winning YOUR CÉLINE.");                    
+                    document.getElementById("alertbox").style.display = "block"; 
+                    
                 }
                 
                 disableButtons();
-            }
+                
+            }          
        
 //change guess answer
             function change(answerNum){
@@ -550,32 +569,36 @@
                 document.getElementById(buttonId).classList.add("color-pink");
                 document.getElementById(spanId).innerHTML = "";
             }
+           
+//count down timer
+            // Set the date we're counting down to
+            var countDownDate = new Date("Aug 19, 2018 24:00:00").getTime();
             
-            /*
-            
-//custom alert box            
-            function CustomAlert(){
-                this.render = function(dialog){
-                    var winW = window.innerWidth;
-                    var winH = window.innerHeight;
-                    var dialogoverlay = document.getElementById('dialogoverlay');
-                    var dialogbox = document.getElementById('dialogbox');
-                    dialogoverlay.style.display = "block";
-                    dialogoverlay.style.height = winH+"px";
-                    dialogbox.style.left = (winW/2) - (550 * .5)+"px";
-                    dialogbox.style.top = "100px";
-                    dialogbox.style.display = "block";
-                    document.getElementById('dialogboxhead').innerHTML = "Acknowledge This Message";
-                    document.getElementById('dialogboxbody').innerHTML = "Hi, this is your last ticket. Get more tickets to increase the chance of winning YOUR CÉLINE.";
-                    document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">OK</button>';
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+                
+                // Get todays date and time
+                var now = new Date().getTime();
+                
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+                
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                // Output the result in an element with id="demo"
+                document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
+                
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
                 }
-                this.ok = function(){
-                    document.getElementById('dialogbox').style.display = "none";
-                    document.getElementById('dialogoverlay').style.display = "none";
-                }
-            }
-            var Alert = new CustomAlert();
-            */
+            }, 1000);
         </script>
         
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
