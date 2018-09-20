@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <title>armcandy-homepage</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+      
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+        
+        <style>
+            
+            * {box-sizing:border-box}
+             body {font-family:sans-serif;background-color:#F2F1F1}
+            .bgimg {background-image:url(gig-image/electronic%20guitar.jpg);background-position: center;background-size: cover;background-repeat: no-repeat;min-height:100%;filter:grayscale(30%);}
+            .border-5 {border-width:5px!important}
+            .opacity {opacity:0.9}
+            .opacity-hover:hover {opacity:0.8}
+            .opacity-lg {opacity:0.8}
+            .hover-opacity-off:hover {opacity:1.0}
+            
+            .display-middle {position:absolute;top:52%;left:50%;transform:translate(-50%,-50%);}
+            .display-top {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+            .icon-size {font-size: 24px;}
+            .hover-pink-text:hover {color:#CA858F!important}
+            .text-pink {color:#CA858F}
+            .hover-white:hover {color:white!important}
+            .hover-info:hover {background-color:#40CEBF!important} 
+            
+            .grayscale {filter:grayscale(80%)}
+            .line-height-s {line-height: 1.0}
+            .bg-grey {background-color:#F3F0F1}
+            .text-grey {color:#999999}
+            .font-size-26 {font-size:28px}
+            .pb-6 {padding-bottom:20px}
+            
+            .cursor {cursor:pointer}
+            .transition {transition:background 0.45s ease-in-out}
+            
+            @media (max-width:700px) {.pt-sm {padding-top: 30px!important};.hide-small {display:none!important};}
+            
+            @media (max-width:992px) and (min-width:701px) {.pt-lg {padding-top: 135px!important};.hide-medium {display:none!important};}
+            
+            @media (min-width:993px) {.pt-lg {padding-top: 135px!important};.hide-large {display:none!important};}
+            
+          
+            .myBtnContainer0 {width:65px;height:190px;text-align: center;} 
+            .badge {width:40px;height:36px;opacity:0.7;color:white;}
+             div.scrollmenu-y {overflow-y:scroll;white-space: nowrap;}
+            .borderless td {border: none;}
+            .color-pink {background-color:#CA858F}
+            .transition {transition:background 0.45s ease-in-out}
+            .col-3-0 {width:30%}
+            .col-4-0 {width:40%}
+            ::-webkit-scrollbar {display:none;}
+            .w-33 {width:33.33%}
+            .font-lg {font-size:23px;}
+            .font-sm {font-size:10px;word-spacing: 6px}
+            #timer {line-height: 100%}
+            #demo {font-size: 20px;font-weight: bold;word-spacing: 4px;}
+            table#timerTb td{padding:0 2px 0 2px!important;}
+            .letter-space {letter-spacing: 0.6px}
+            .word-space {word-spacing: normal}
+        
+            ::-webkit-input-placeholder {
+                text-align: center;
+            }
+
+            :-moz-placeholder { /* Firefox 18- */
+                text-align: center;  
+            }
+
+            ::-moz-placeholder {  /* Firefox 19+ */
+                text-align: center;  
+            }
+
+            :-ms-input-placeholder {  
+                text-align: center; 
+            }
+            
+            .w-25 {width:25%}
+            .change-answer {}
+           
+            @keyframes shake {
+              10%, 90% {
+                transform: translate3d(-1px, 0, 0);
+              }
+
+              20%, 80% {
+                transform: translate3d(2px, 0, 0);
+              }
+
+              30%, 50%, 70% {
+                transform: translate3d(-4px, 0, 0);
+              }
+
+              40%, 60% {
+                transform: translate3d(4px, 0, 0);
+              }
+            }
+
+            .apply-shake {
+                animation: shake 0.2s cubic-bezier(.36,.07,.19,.97) both;
+            }
+            
+    /* custom alert box*/
+            #alertbox {
+                width:400px;
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                color:black;
+                background:#CA858F;
+                box-shadow: 0 0 20px #CA858F;
+                border-radius: 8px;
+                overflow: hidden;
+                text-align: center;
+                padding: 10px;
+                z-index: 9999;
+                display: none;
+            }
+            
+            #alertbox span{
+                color:#2ecc71;
+                font-size:40px;
+                display:block;
+                margin:20px 0;
+            }
+        
+        </style>
+        
+    </head>
+    <body> 
+        <div class="container bg-grey d-none d-md-block" style="height:25px">
+            <p class="text-right text-secondary pt-1 small">Arm Candy is powered by  Gear Digital</p>
+        </div>
+        <div class="container bg-white">
+<!--navbar in pc-->
+            <div class="container">
+                <div class="d-none d-md-block">
+                    <nav class="navbar navbar-light navbar-expand-md justify-content-between pb-0">
+                        <div class="w-33 text-center">
+                            <div class="border d-none d-md-block" style="width:200px">
+                                <div class="pt-2 pb-2 pl-2 pr-2">
+                                    <span class="text-pink">NEXT WINNER IN</span><br>
+                                    <div id="timer">
+                                        <span id="demo" class="pl-2"></span><br>
+                                        <span class="font-sm">DAYS HOURS MINS SECS</span>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/" class="navbar-brand text-center w-33">
+                            <img class="opacity hover-opacity-off" src="armcandy-image/logo.png" width=100px height="60px" alt="ArmCandy">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse dual-nav w-33">
+                            <div class="d-flex flex-row ml-auto p-2">
+                                <div><a href="https://www.facebook.com/ArmCandyHB/" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-facebook text-primary p-1"></i></a></div>
+                                <div><a href="#" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-instagram text-info p-1"></i></a></div>
+                                <div><a href="#" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-twitter p-1"></i></a></div>
+                                <div><a href="https://www.youtube.com/channel/UChppZlhT1ljTGlKYuih15oQ" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-youtube text-danger p-1"></i></a></div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <div class="container">
+                        <div class="navbar-collapse collapse border-top border-bottom mb-2">
+                            <ul class="navbar-nav nav-fill w-100">
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">CHOOSE YOUR BAG</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">HOW TO WIN</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">RESULTS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">WINNERS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">ABOUT US</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">CONTACT US</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+<!--navbar in mobil-->
+                <div class="d-block d-md-none">
+                    <nav class="navbar navbar-expand-md navbar-light" style="margin-bottom:-10px;margin-top:-28px">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation" style="margin-left:-30px">
+                            <small><span class="navbar-toggler-icon"></span></small>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img class="opacity hover-opacity-off" src="armcandy-image/logo.png" width=70px height="40px" alt="ArmCandy">
+                        </a>
+                        <a class="" href="#">
+                            <img class="opacity hover-opacity-off" src="armcandy-image/geardigital.jpg" width=40px height="20px" alt="geardigital" style="margin-right:-30px">
+                        </a>
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-center">
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">CHOOSE YOUR BAG</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">HOW TO WIN</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">RESULTS</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">WINNERS</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">ABOUT US</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">CONTACT US</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+<!--count down time in mobile-->            
+            <div class="border-top border-bottom d-block d-md-none mb-2">
+                <div class="pl-2 pr-2 text-center"> 
+                    <table id="timerTb" class="mx-auto">
+                        <tr>
+                            <td rowspan="2" class="small">NEXT WINNER IN</td>
+                            <td id="days" class="small text-pink"></td>
+                            <td id="hours" class="small text-pink"></td>
+                            <td id="minutes" class="small text-pink"></td>
+                            <td id="seconds" class="small text-pink"></td>
+                        </tr>
+                        <tr>
+                            <td class="font-sm text-pink">DAYS</td>
+                            <td class="font-sm text-pink">HOURS</td>
+                            <td class="font-sm text-pink">MINS</td>
+                            <td class="font-sm text-pink">SECS</td>
+                        </tr>
+                    </table>
+                    <span id="demo-1" class="small"></span>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <h5 class="font-weight-bold letter-space"><small>CHOSE YOUR BAG</small></h5>
+                <p class="text-grey small">Which bag would you most like to win?</p>
+            </div>
+<!--bags--> 
+            <div class="container pb-4">
+                <div class="row">
+                    <div class="card col-6 col-md-3">
+                        <img class="card-img-top mx-auto" src="armcandy-image/Chanel0.jpg" alt="Chanel-calfskin" style="width:140px;height:140px;font-family: filson-pro">
+                        <a href=""><button class="text-white color-pink border-0 rounded p-2 small w-100 cursor opacity-lg hover-opacity-off">WIN THIS BAG</button></a>
+                        <div class="card-body text-center line-height-s">
+                            <h5 class=""><small>CHANEL</small></h5>
+                            <p class="card-text small text-grey"><small>Boy Chanel Handbag Calfskin & Ruthenium-Finish Metal</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-6 col-md-3">
+                        <img class="card-img-top mx-auto" src="armcandy-image/Chanel-calfskin.jpg" alt="Chanel-calfskin" style="width:140px;height:140px;font-family: filson-pro">
+                        <a href=""><button class="text-white color-pink border-0 rounded p-2 small w-100 cursor opacity-lg hover-opacity-off">WIN THIS BAG</button></a>
+                        <div class="card-body text-center line-height-s">
+                            <h5 class=""><small>CHANEL</small></h5>
+                            <p class="card-text small text-grey"><small>Classic Handbag Grained Calfskin & Gold Metal</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-6 col-md-3">
+                        <img class="card-img-top mx-auto" src="armcandy-image/Gucci0.jpg" alt="Chanel-calfskin" style="width:140px;height:140px;font-family: filson-pro">
+                        <a href=""><button class="text-white color-pink border-0 rounded p-2 small w-100 cursor opacity-lg hover-opacity-off">WIN THIS BAG</button></a>
+                        <div class="card-body text-center line-height-s">
+                            <h5 class=""><small>GUCCI</small></h5>
+                            <p class="card-text small text-grey"><small>Dionysus Small Suede Shoulder Bag</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-6 col-md-3">
+                        <img class="card-img-top mx-auto" src="armcandy-image/Saint%20Laurent0.jpg" alt="Chanel-calfskin" style="width:140px;height:140px;font-family: filson-pro">
+                        <a href=""><button class="text-white color-pink border-0 rounded p-2 small w-100 cursor opacity-lg hover-opacity-off">WIN THIS BAG</button></a>
+                        <div class="card-body text-center line-height-s">
+                            <h5 class=""><small>SAINT LAURENT</small></h5>
+                            <p class="card-text small text-grey"><small>Monogram Quilted-Leather Shoulder Bag</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card col-6 col-md-3">
+                        <img class="card-img-top mx-auto" src="armcandy-image/Louis%20Vuitton0.jpg" alt="Chanel-calfskin" style="width:140px;height:140px;font-family: filson-pro">
+                        <a href=""><button class="text-white color-pink border-0 rounded p-2 small w-100 cursor opacity-lg hover-opacity-off">WIN THIS BAG</button></a>
+                        <div class="card-body text-center line-height-s">
+                            <h5 class=""><small>LOUIS VUITTON</small></h5>
+                            <p class="card-text small text-grey"><small>Neverfull PM Damier Azur Canvas</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-6 col-md-3">
+                        <img class="card-img-top mx-auto" src="armcandy-image/burberry2_thumb.webp" alt="Chanel-calfskin" style="width:140px;height:140px;font-family: filson-pro">
+                        <a href=""><button class="text-white color-pink border-0 rounded p-2 small w-100 cursor opacity-lg hover-opacity-off">WIN THIS BAG</button></a>
+                        <div class="card-body text-center line-height-s">
+                            <h5 class=""><small>BURBERRY</small></h5>
+                            <p class="card-text small text-grey"><small>Medium Banner in Leather and Snakeskin</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-6 col-md-3">
+                        <img class="card-img-top mx-auto" src="armcandy-image/bag_dior1_1.jpg" alt="Chanel-calfskin" style="width:140px;height:140px;font-family: filson-pro">
+                        <a href=""><button class="text-white color-pink border-0 rounded p-2 small w-100 cursor opacity-lg hover-opacity-off">WIN THIS BAG</button></a>
+                        <div class="card-body text-center line-height-s">
+                            <h5 class=""><small>DIOR</small></h5>
+                            <p class="card-text small text-grey"><small>Mini Lady Dior Bag in Pink Lambskin with Chain</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-6 col-md-3">
+                        <img class="card-img-top mx-auto" src="armcandy-image/Gucci0%20(1).jpg" alt="Chanel-calfskin" style="width:140px;height:140px;font-family: filson-pro">
+                        <a href=""><button class="text-white color-pink border-0 rounded p-2 small w-100 cursor opacity-lg hover-opacity-off">WIN THIS BAG</button></a>
+                        <div class="card-body text-center line-height-s">
+                            <h5 class=""><small>GUCCI</small></h5>
+                            <p class="card-text small text-grey"><small>Sylvie Leather Shoulder Bag</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--other medias-->            
+            <div class="bg-grey border-bottom d-block d-md-none">
+                <div class="">
+                    <div class="d-flex flex-row justify-content-center p-2">
+                        <div><a href="https://www.facebook.com/ArmCandyHB/" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-facebook text-primary p-1"></i></a></div>
+                        <div><a href="#" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-instagram text-info p-1"></i></a></div>
+                        <div><a href="#" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-twitter p-1"></i></a></div>
+                        <div><a href="https://www.youtube.com/channel/UChppZlhT1ljTGlKYuih15oQ" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-youtube text-danger p-1"></i></a></div>
+                    </div>
+                </div>
+            </div>
+<!--game rule-->     
+            <div class="bg-grey border-bottom">       
+                <div class="row mx-auto pt-5 pb-5" style="max-width:1000px;">
+                    <div class="text-center col-sm-4 line-height-s">
+                        <span style="font-size:50px"><i class="fas fa-shopping-bag text-pink border rounded-circle mb-1" style="padding:20px 25px 20px 25px"></i></span><br>
+                        <span class="font-weight-bold">STEP 1</span><br>
+                        <span class="text-secondary">CHOOSE YOUR BAG</span><br>
+                        <span class="small text-secondary">Selected bags from world leading brands</span>
+                    </div>
+                    <div class="text-center col-sm-4 line-height-s">
+                        <span style="font-size:50px"><i class="fas fa-prescription-bottle text-pink border rounded-circle mb-1" style="padding:20px 25px 20px 25px"></i></span><br>
+                        <span class="font-weight-bold">STEP 2</span><br>
+                        <span class="text-secondary">PLAY YOUR TICKETS</span><br>
+                        <span class="small text-secondary">Guess how many sweets are in the jar</span>
+                    </div>
+                    <div class="text-center col-sm-4 line-height-s">
+                        <span style="font-size:50px"><i class="fas fa-award text-pink border rounded-circle mb-1" style="padding:20px 25px 20px 25px"></i></span><br>
+                        <span class="font-weight-bold">STEP 3</span><br>
+                        <span class="text-secondary">WINNERS SELECTED</span><br>
+                        <span class="small text-secondary">The closest guess wins their chosen bag!</span>
+                    </div>
+                </div>
+            </div>
+<!--Authority-->   
+            <div class="container text-center pt-2 pb-2 pr-5 pl-5 line-height-s bg-grey">
+                <span class="small">Our count is filmed and authenticated by an independent third-party</span><br>
+                <span class="text-muted small">Anyone connected with Arm Candy or its subsidiary companies are ineligible to play this competition</span>
+            </div>
+<!--footer-->           
+            <div class="container row mx-auto no-gutters p-2" style="background-color:#FFFFFF">
+                <div class="col-lg-1 col-md-1 text-center pt-3 pb-3 pt-sm-0 pb-sm-0"><img src="armcandy-image/logo.png" style="width:60px;height:30px"></div>
+                <div class="col-lg-1 col-md-2 text-center text-pink pt-sm-2" style="font-size:12.5px">01618187110</div>
+                <div class="col-md-1 font-sm text-center pt-sm-2">info@arm-candy.uk</div>
+                <div class="col-md-2 col-6 text-right text-sm-center font-sm pt-sm-2 letter-space">Terms&Conditions</div>
+                <div class="col-md-1 col-6 text-left text-sm-center font-sm pt-sm-2 pl-3 pl-sm-0 word-space">Privacy Policy</div>
+                <div class="col-lg-6 col-md-5 text-md-right text-center text-muted line-height-s pt-4 pb-4 pt-sm-0 pb-sm-0" style="font-size:9px"><b>Copyright © 2017 ArmCandy. Owned by Gear Digital Ltd.</b><br>Registered Office: 7c Blackfriars House, Parsonage, Manchester, M3 2JA<br>Arm Candy Registration Number 09512370</div>
+            </div>
+        </div>  
+        <div class="container bg-grey d-none d-md-block" style="height:25px"></div>           
+
+        <script>
+           
+//count down timer
+            // Set the date we're counting down to
+            var countDownDate = new Date("2018-15-10T24:00:00").getTime();
+            
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+                
+                // Get todays date and time
+                var now = new Date().getTime();
+                
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+                
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24)).toLocaleString(undefined,{minimumIntegerDigits: 2});
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toLocaleString(undefined,{minimumIntegerDigits: 2});
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toLocaleString(undefined,{minimumIntegerDigits: 2});
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000).toLocaleString(undefined,{minimumIntegerDigits: 2});
+                
+                // Output the result in an element with id="demo"
+              
+                document.getElementById("demo").innerHTML = days + ": " + hours + ": "
+                    + minutes + ": " + seconds + " ";
+                
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+                /*
+                document.getElementById("demo-1").innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";*/
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                    document.getElementById("demo-1").innerHTML = "EXPIRED";
+                }
+            }, 0);
+            
+//toggle between count and win            
+            function win(){
+                document.getElementById("win").style.display = "block";
+                document.getElementById("win").style.backgroundColor = "#FFFFFF";
+                document.getElementById("winBtn").style.backgroundColor = "#FFFFFF";
+                document.getElementById("countBtn").style.backgroundColor = "#FCF7F8";
+                document.getElementById("count").style.display = "none";
+            }
+            function count(){
+                document.getElementById("count").style.display = "block";
+                document.getElementById("countBtn").style.backgroundColor = "#FFFFFF";
+                document.getElementById("winBtn").style.backgroundColor = "#FCF7F8";
+                document.getElementById("win").style.display = "none";
+            }
+        </script>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+    </body>
+</html>
