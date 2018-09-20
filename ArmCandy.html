@@ -3,8 +3,9 @@
 <html>
     
     <head>
-        <title>Arm Candy-7th</title>
+        <title>Arm Candy-new-8th</title>
         <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
       
@@ -265,7 +266,7 @@
             <div>
                 <div class="row pb-3">
                     <div class="col-12 col-lg-4 text-center">
-                        <div class="pt-5 mt-4"><iframe width="350" height="196.875" src="https://www.youtube.com/embed/org7gR1odqg?rel=0&autoplay=1&loop=1&playlist=org7gR1odqg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+                        <div class="pt-3 pt-sm-5 mt-4"><iframe width="330" height="185.625" src="https://www.youtube.com/embed/org7gR1odqg?&background=1&muted=1&rel=0&autoplay=1&&loop=1&playlist=org7gR1odqg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                     </div>
                     <div class="col-12 col-lg-4">
                         <h4 class="text-center font-weight-bold">GUESS THE SWEETS <br> WIN YOUR Dior</h4>
@@ -519,7 +520,6 @@
                             <div class="text-center pt-3">
                             <button id="playAlertButton" type="button" class="pt-1 pb-1 pr-2 pl-2 ml-2 rounded text-white color-pink border-0 opacity hover-opacity-off cursor" onclick=play()>Play Your Tickets</button>
                             <div id="playAlertbox" class="alertbox">
-                                <img class="rounded p-3" src="armcandy-image/dior.jpg" style="width:200px;height:200px">
                                 <h5 class="p-2 text-white">Your Tickets Have Submitted Successfully. <br>Get more tickets to increase the chance of winning YOUR Dior.</h5>
                                 <button class="btn-info btn-sm opacity cursor pt-2 pb-2 pr-3 pl-3 rounded" onclick="closePlay()">Close</button>
                             </div>
@@ -603,20 +603,20 @@
 //button click sound effect        
             function playBleep() {
                 var bleep = new Audio();
-                bleep.src = 'bleep.mp3';
+                bleep.src = "bleep.mp3";
                 bleep.play();
             }
             function playSelect() {
                 var select = new Audio();
-                select.src = 'select20.mp3';
+                select.src = "select20.mp3";
                 select.play();
             }
 
-//disableButtons  ???         
+//disableButtons    ???    
             window.onload = function() {
                 disableButtons();
             }
-            
+            /*
             function disableButtons() {
                 
                 var disablePlayButton = false;
@@ -631,6 +631,26 @@
                 }
                 
                 document.getElementById("playAlertButton").disabled = disablePlayButton;
+            }
+            
+            function closeBox() {
+                if (document.getElementById("alertbox").style.display = "block"){
+                    document.getElementById("alertbox").style.display = "none";
+                }
+            }*/
+            
+            function disableButtons() {
+                
+                for (var answerNum = 1; answerNum <= 3; answerNum++){
+                    if (document.getElementById("answer" + answerNum).innerHTML == '') {
+                        document.getElementById("answer" + answerNum + "-btn").disabled = true;
+                        document.getElementById("playAlertButton").disabled = true;
+                    }
+                    else
+                        document.getElementById("answer" + answerNum + "-btn").disabled = false;
+                }
+                
+                
             }
             
             function closeBox() {
@@ -749,7 +769,7 @@
            
 //count down timer
             // Set the date we're counting down to
-            var countDownDate = new Date("2018-15-10T24:00:00").getTime();
+            var countDownDate = new Date("2018-10-15T24:00:00").getTime();
             
             // Update the count down every 1 second
             var x = setInterval(function() {
