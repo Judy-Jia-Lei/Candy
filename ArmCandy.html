@@ -3,7 +3,7 @@
 <html>
     
     <head>
-        <title>Arm Candy-2nd</title>
+        <title>Arm Candy-3rd</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
@@ -57,6 +57,7 @@
             .color-pink {background-color:#CA858F}
             .transition {transition:background 0.45s ease-in-out}
             .col-4-0 {width:33.33%}
+            ::-webkit-scrollbar {display:none;}
             
             table#t01 {
                 border:1px solid #DDE2E6;
@@ -92,6 +93,31 @@
             table#t01 th:first-child {
                 border-left:none;
             }  
+            
+    /* custom alert box*/
+            #dialogoverlay{
+                display: none;
+                opacity: .8;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                background: #FFF;
+                width: 100%;
+                z-index: 10;
+            }
+            #dialogbox{
+                display: none;
+                position: fixed;
+                background: #000;
+                border-radius:7px; 
+                width:550px;
+                z-index: 10;
+            }
+            
+            #dialogbox > div{ background:#FFF; margin:8px; }
+            #dialogbox > div > #dialogboxhead{ background: #666; font-size:19px; padding:10px; color:#CCC; }
+            #dialogbox > div > #dialogboxbody{ background:#333; padding:20px; color:#FFF; }
+            #dialogbox > div > #dialogboxfoot{ background: #666; padding:10px; text-align:right; }
 
         </style>
         
@@ -148,55 +174,55 @@
                         <h4 class="text-center font-weight-bold">GUESS THE SWEETS <br> WIN YOUR CÉLINE</h4>
                         <p class="text-center text-muted"><small>The closest guess to the actual number of sweets WINS the bag!</small></p>
                         <div class="row pt-3 mx-auto no-gutters">
-                            <div class="myBtnContainer0 scrollmenu-y mx-auto">
+                            <div id="btnGroup01" class="myBtnContainer0 scrollmenu-y mx-auto">
                                 <table class="table borderless bg-light opacity hover-opacity-off transition">
                                     <tr>
                                         <td>
-                                        <button id="0-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" onclick="buttonClick('0-1')">0</button>
+                                        <button id="0-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" onclick="buttonClick('0-1')" onmouseover="playBleep()" onmousedown="playSelect()">0</button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><button id="1-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" onclick="buttonClick('1-1')">1</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                        <button id="2-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" onclick="buttonClick('2-1')">2</button>
+                                        <td><button id="1-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" onclick="buttonClick('1-1')" onmouseover="playBleep()" onmousedown="playSelect()">1</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="3-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" onclick="buttonClick('3-1')">3</button>
+                                        <button id="2-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" onclick="buttonClick('2-1')" onmouseover="playBleep()" onmousedown="playSelect()">2</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="4-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" onclick="buttonClick('4-1')">4</button>
+                                        <button id="3-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" onclick="buttonClick('3-1')" onmouseover="playBleep()" onmousedown="playSelect()">3</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="5-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" onclick="buttonClick('5-1')">5</button>
+                                        <button id="4-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" onclick="buttonClick('4-1')" onmouseover="playBleep()" onmousedown="playSelect()">4</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="6-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" onclick="buttonClick('6-1')">6</button>
+                                        <button id="5-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" onclick="buttonClick('5-1')" onmouseover="playBleep()" onmousedown="playSelect()">5</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="7-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" onclick="buttonClick('7-1')">7</button>
+                                        <button id="6-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" onclick="buttonClick('6-1')" onmouseover="playBleep()" onmousedown="playSelect()">6</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="8-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" id="badge-background-mountain" onclick="buttonClick('8-1')">8</button>
+                                        <button id="7-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" onclick="buttonClick('7-1')" onmouseover="playBleep()" onmousedown="playSelect()">7</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="9-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" id="badge-background-bridge" onclick="buttonClick('9-1')">9</button>
+                                        <button id="8-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" id="badge-background-mountain" onclick="buttonClick('8-1')" onmouseover="playBleep()" onmousedown="playSelect()">8</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <button id="9-1" class="badge color-pink btn opacity hover-opacity-off transition carousel-1" id="badge-background-bridge" onclick="buttonClick('9-1')" onmouseover="playBleep()" onmousedown="playSelect()">9</button>
                                         </td>
                                     </tr>   
                                 </table>
@@ -206,51 +232,51 @@
                                 <table class="table borderless bg-light">
                                     <tr>
                                         <td>
-                                        <button id="0-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-tibet" onclick="buttonClick('0-2')">0</button>
+                                        <button id="0-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-tibet" onclick="buttonClick('0-2')" onmouseover="playBleep()" onmousedown="playSelect()">0</button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><button id="1-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-nature" onclick="buttonClick('1-2')">1</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                        <button id="2-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-oldman" onclick="buttonClick('2-2')">2</button>
+                                        <td><button id="1-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-nature" onclick="buttonClick('1-2')" onmouseover="playBleep()" onmousedown="playSelect()">1</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="3-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-sunset" onclick="buttonClick('3-2')">3</button>
+                                        <button id="2-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-oldman" onclick="buttonClick('2-2')" onmouseover="playBleep()" onmousedown="playSelect()">2</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="4-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-europe" onclick="buttonClick('4-2')">4</button>
+                                        <button id="3-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-sunset" onclick="buttonClick('3-2')" onmouseover="playBleep()" onmousedown="playSelect()">3</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="5-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-zhangye" onclick="buttonClick('5-2')">5</button>
+                                        <button id="4-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-europe" onclick="buttonClick('4-2')" onmouseover="playBleep()" onmousedown="playSelect()">4</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="6-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-tibet" onclick="buttonClick('6-2')">6</button>
+                                        <button id="5-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-zhangye" onclick="buttonClick('5-2')" onmouseover="playBleep()" onmousedown="playSelect()">5</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="7-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-YangGe" onclick="buttonClick('7-2')">7</button>
+                                        <button id="6-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-tibet" onclick="buttonClick('6-2')" onmouseover="playBleep()" onmousedown="playSelect()">6</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="8-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-mountain" onclick="buttonClick('8-2')">8</button>
+                                        <button id="7-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-YangGe" onclick="buttonClick('7-2')" onmouseover="playBleep()" onmousedown="playSelect()">7</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="9-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-bridge" onclick="buttonClick('9-2')">9</button>
+                                        <button id="8-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-mountain" onclick="buttonClick('8-2')" onmouseover="playBleep()" onmousedown="playSelect()">8</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <button id="9-2" class="badge color-pink btn opacity hover-opacity-off transition carousel-2" id="badge-background-bridge" onclick="buttonClick('9-2')" onmouseover="playBleep()" onmousedown="playSelect()">9</button>
                                         </td>
                                     </tr>   
                                 </table>
@@ -260,51 +286,51 @@
                                 <table class="table borderless bg-light">
                                     <tr>
                                         <td>
-                                        <button id="0-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-tibet" onclick="buttonClick('0-3')">0</button>
+                                        <button id="0-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-tibet" onclick="buttonClick('0-3')" onmouseover="playBleep()" onmousedown="playSelect()">0</button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><button id="1-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-nature" onclick="buttonClick('1-3')">1</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                        <button id="2-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-oldman" onclick="buttonClick('2-3')">2</button>
+                                        <td><button id="1-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-nature" onclick="buttonClick('1-3')" onmouseover="playBleep()" onmousedown="playSelect()">1</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="3-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-sunset" onclick="buttonClick('3-3')">3</button>
+                                        <button id="2-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-oldman" onclick="buttonClick('2-3')" onmouseover="playBleep()" onmousedown="playSelect()">2</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="4-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-europe" onclick="buttonClick('4-3')">4</button>
+                                        <button id="3-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-sunset" onclick="buttonClick('3-3')" onmouseover="playBleep()" onmousedown="playSelect()">3</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="5-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-zhangye" onclick="buttonClick('5-3')">5</button>
+                                        <button id="4-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-europe" onclick="buttonClick('4-3')" onmouseover="playBleep()" onmousedown="playSelect()">4</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="6-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-tibet" onclick="buttonClick('6-3')">6</button>
+                                        <button id="5-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-zhangye" onclick="buttonClick('5-3')" onmouseover="playBleep()" onmousedown="playSelect()">5</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="7-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-YangGe" onclick="buttonClick('7-3')">7</button>
+                                        <button id="6-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-tibet" onclick="buttonClick('6-3')" onmouseover="playBleep()" onmousedown="playSelect()">6</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="8-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-mountain" onclick="buttonClick('8-3')">8</button>
+                                        <button id="7-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-YangGe" onclick="buttonClick('7-3')" onmouseover="playBleep()" onmousedown="playSelect()">7</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="9-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-bridge" onclick="buttonClick('9-3')">9</button>
+                                        <button id="8-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-mountain" onclick="buttonClick('8-3')" onmouseover="playBleep()" onmousedown="playSelect()">8</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <button id="9-3" class="badge color-pink btn opacity hover-opacity-off transition carousel-3" id="badge-background-bridge" onclick="buttonClick('9-3')" onmouseover="playBleep()" onmousedown="playSelect()">9</button>
                                         </td>
                                     </tr>   
                                 </table>
@@ -314,58 +340,67 @@
                                 <table class="table borderless bg-light">
                                     <tr>
                                         <td>
-                                        <button id="0-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-tibet" onclick="buttonClick('0-4')">0</button>
+                                        <button id="0-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-tibet" onclick="buttonClick('0-4')" onmouseover="playBleep()" onmousedown="playSelect()">0</button>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><button id="1-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-nature" onclick="buttonClick('1-4')">1</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                        <button id="2-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-oldman" onclick="buttonClick('2-4')">2</button>
+                                        <td><button id="1-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-nature" onclick="buttonClick('1-4')" onmouseover="playBleep()" onmousedown="playSelect())">1</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="3-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-sunset" onclick="buttonClick('3-4')">3</button>
+                                        <button id="2-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-oldman" onclick="buttonClick('2-4')" onmouseover="playBleep()" onmousedown="playSelect()">2</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="4-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-europe" onclick="buttonClick('4-4')">4</button>
+                                        <button id="3-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-sunset" onclick="buttonClick('3-4')" onmouseover="playBleep()" onmousedown="playSelect()">3</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="5-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-zhangye" onclick="buttonClick('5-4')">5</button>
+                                        <button id="4-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-europe" onclick="buttonClick('4-4')" onmouseover="playBleep()" onmousedown="playSelect()">4</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="6-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-tibet" onclick="buttonClick('6-4')">6</button>
+                                        <button id="5-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-zhangye" onclick="buttonClick('5-4')" onmouseover="playBleep()" onmousedown="playSelect()">5</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="7-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-YangGe" onclick="buttonClick('7-4')">7</button>
+                                        <button id="6-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-tibet" onclick="buttonClick('6-4')" onmouseover="playBleep()" onmousedown="playSelect()">6</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="8-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-mountain" onclick="buttonClick('8-4')">8</button>
+                                        <button id="7-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-YangGe" onclick="buttonClick('7-4')" onmouseover="playBleep()" onmousedown="playSelect()">7</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                        <button id="9-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-bridge" onclick="buttonClick('9-4')">9</button>
+                                        <button id="8-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-mountain" onclick="buttonClick('8-4')" onmouseover="playBleep()" onmousedown="playSelect()">8</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        <button id="9-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-bridge" onclick="buttonClick('9-4')" onmouseover="playBleep()" onmousedown="playSelect()">9</button>
                                         </td>
                                     </tr>   
                                 </table>
                             </div> 
                         </div>
                         <div class="text-center mx-auto">
-                            <button class="mt-3 btn-sm text-white color-pink opacity hover-opacity-off transition cursor border-0" id="submit-button" onclick="submit()">Submit</button>
+                            <button class="mt-3 btn-sm text-white color-pink opacity hover-opacity-off transition cursor border-0" id="submit-button" onclick="submit()" onclick="Alert.render('You look very pretty today.')" >Submit</button>
+                        </div>
+                    </div>
+                    
+                    <div id="dialogoverlay"></div>
+                    <div id="dialogbox">
+                        <div>
+                            <div id="dialogboxhead"></div>
+                            <div id="dialogboxbody"></div>
+                            <div id="dialogboxfoot"></div>
                         </div>
                     </div>
                     
@@ -381,17 +416,17 @@
                                 <tr id="answer1-bg" class="color-pink">
                                     <td class="col-4-0 align-middle">First ticket</td>
                                     <td class="col-4-0 align-middle"><span id="answer1"></span></td>
-                                    <td class="col-4-0 align-middle"><button type="button" class="btn-sm"><small>Change</small></button></td>
+                                    <td class="col-4-0 align-middle"><button id="answer1-btn" type="button" class="btn-sm" onclick="change(1)"><small>Change</small></button></td>
                                 </tr>
                                 <tr id="answer2-bg">
                                     <td class="align-middle">Second ticket</td>
                                     <td class="align-middle"><span id="answer2"></span></td>
-                                    <td class="align-middle"><button type="button" class="btn-sm"><small>Change</small></button></td>
+                                    <td class="align-middle"><button id="answer2-btn" type="button" class="btn-sm" onclick="change(2)"><small>Change</small></button></td>
                                 </tr>
                                 <tr id="answer3-bg">
                                     <td class="align-middle">Third ticket</td>
                                     <td class="align-middle"><span id="answer3"></span></td>
-                                    <td class="align-middle"><button type="button" class="btn-sm"><small>Change</small></button></td>
+                                    <td class="align-middle"><button id="answer3-btn" type="button" class="btn-sm" onclick="change(3)"><small>Change</small></button></td>
                                 </tr>
                             </table>
                         </div>
@@ -404,46 +439,75 @@
     
          
         <script>
-             function buttonClick(buttonId)
-            {
-                var element = buttonId[2] - 1;
-
-	           // Declare empty string that will store the value from the four carousels
-                    var number = "";
-
-	           // Keep note of the current selection
-	                var current = document.getElementById("current").innerHTML;
-
-	           // Build the new string from the current selection, replace the digit based on which button was clicked
-                    switch (element){
-                        
-                        case 0:
-                            number =  document.getElementById(buttonId).innerHTML
-                            + current[1] + current[2] + current[3];
-                         break;
-
-                         case 1:
-                             number =  current[0] + document.getElementById(buttonId).innerHTML
-                             + current[2] + current[3];
-                         break;
-
-                         case 2:
-                            number =  current[0] + current[1] + document.getElementById(buttonId).innerHTML
-                            + current[3];
-                         break;
-
-                         case 3:
-                            number =  current[0] + current[1] + current[2]
-                            + document.getElementById(buttonId).innerHTML;
-                         break;
-
-                         default:
-                            alert("error!");
-                            return;
-                     }
-
-                  document.getElementById("current").innerHTML = number;
+//button click sound effect        
+            function playBleep() {
+                var bleep = new Audio();
+                bleep.src = 'bleep.mp3';
+                bleep.play();
+            }
+            
+            function playSelect() {
+                var select = new Audio();
+                select.src = 'select20.mp3';
+                select.play();
+            }
+            
+            window.onload = function() {
+                disableButtons();
+            }
+            
+                /*
+                document.getElementById("btnGroup01").addEventListener("wheel", myFunction);
+                function myFunction() {
+                    this.style.fontSize = "35px";
+                } */
+            
+            function disableButtons() {             
+                for (var answerNum = 1; answerNum <= 3; answerNum++){
+                    document.getElementById("answer" + answerNum + "-btn").disabled = (document.getElementById("answer" + answerNum).innerHTML == '');
                 }
+            }
+            
+            
+            function buttonClick(buttonId){
+                var element = buttonId[2] - 1;
+                
+                // Declare empty string that will store the value from the four carousels
+                var number = "";
+                
+                // Keep note of the current selection
+                var current = document.getElementById("current").innerHTML;
+                
+                // Build the new string from the current selection, replace the digit based on which button was clicked
+                switch (element){
+                        
+                    case 0:
+                        number =  document.getElementById(buttonId).innerHTML
+                            + current[1] + current[2] + current[3];
+                        break;
+                        
+                    case 1:
+                        number =  current[0] + document.getElementById(buttonId).innerHTML
+                            + current[2] + current[3];
+                        break;
+                        
+                    case 2:
+                        number =  current[0] + current[1] + document.getElementById(buttonId).innerHTML
+                            + current[3];
+                        break;
+                        
+                    case 3:
+                        number =  current[0] + current[1] + current[2]
+                            + document.getElementById(buttonId).innerHTML;
+                        break;
+                        
+                    default:
+                        alert("error!");
+                        return;
+                }
+                
+                document.getElementById("current").innerHTML = number;
+            }
 
             
             function submit(){
@@ -467,13 +531,51 @@
                 else if (document.getElementById("answer3").innerHTML == '')
                 {
                     document.getElementById("answer3").innerHTML = current;
-                    document.getElementById("submit-button").disabled = true;
-                    alert("Hi, this is your last ticket. Get more tickets to increase the chance of winning YOUR CÉLINE.");
                     document.getElementById("current").innerHTML = '0000';
+                    alert("Hi, this is your last ticket. Get more tickets to increase the chance of winning YOUR CÉLINE.");                    
                 }
+                
+                disableButtons();
+            }
+       
+//change guess answer
+            function change(answerNum){
+                
+                var buttonId = "answer" + answerNum + "-bg";
+                var spanId = "answer" + answerNum;
+                
+                document.getElementById("answer1-bg").classList.remove("color-pink");
+                document.getElementById("answer2-bg").classList.remove("color-pink");
+                document.getElementById("answer3-bg").classList.remove("color-pink");
+                document.getElementById(buttonId).classList.add("color-pink");
+                document.getElementById(spanId).innerHTML = "";
             }
             
+            /*
             
+//custom alert box            
+            function CustomAlert(){
+                this.render = function(dialog){
+                    var winW = window.innerWidth;
+                    var winH = window.innerHeight;
+                    var dialogoverlay = document.getElementById('dialogoverlay');
+                    var dialogbox = document.getElementById('dialogbox');
+                    dialogoverlay.style.display = "block";
+                    dialogoverlay.style.height = winH+"px";
+                    dialogbox.style.left = (winW/2) - (550 * .5)+"px";
+                    dialogbox.style.top = "100px";
+                    dialogbox.style.display = "block";
+                    document.getElementById('dialogboxhead').innerHTML = "Acknowledge This Message";
+                    document.getElementById('dialogboxbody').innerHTML = "Hi, this is your last ticket. Get more tickets to increase the chance of winning YOUR CÉLINE.";
+                    document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()">OK</button>';
+                }
+                this.ok = function(){
+                    document.getElementById('dialogbox').style.display = "none";
+                    document.getElementById('dialogoverlay').style.display = "none";
+                }
+            }
+            var Alert = new CustomAlert();
+            */
         </script>
         
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
