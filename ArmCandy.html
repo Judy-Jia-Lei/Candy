@@ -3,7 +3,7 @@
 <html>
     
     <head>
-        <title>Arm Candy-4th</title>
+        <title>Arm Candy-5th</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
@@ -31,6 +31,7 @@
             .display-top {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
             .icon-size {font-size: 24px;}
             .hover-pink-text:hover {color:#CA858F!important}
+            .text-pink {color:#CA858F}
             .hover-white:hover {color:white!important}
             .hover-info:hover {background-color:#40CEBF!important} 
             
@@ -58,6 +59,8 @@
             .transition {transition:background 0.45s ease-in-out}
             .col-4-0 {width:33.33%}
             ::-webkit-scrollbar {display:none;}
+            .w-33 {width:33.33%}
+            .font-lg {font-size:23px}
             
     /* rounded corner table */        
             table#t01 {
@@ -124,48 +127,106 @@
         
     </head>
     <body> 
+        <div class="container bg-grey d-none d-md-block" style="height:25px">
+            <p class="text-right text-secondary pt-1 small">Arm Candy is powered by  Gear Digital</p>
+        </div>
         <div class="container bg-white pb-6">
-            <div class="container pt-4">
-                <nav class="navbar navbar-expand-md navbar-light">
-                    <div class="container">
-                        <div class="border" style="width:300px">
-                            <div class="pt-2 pb-2 pl-2 pr-2 text-center">
-                                NEXT WINNER IN <br>
-                                <span id="demo"></span>
+            <div class="container">
+                <div class="d-none d-md-block">
+                    <nav class="navbar navbar-light navbar-expand-md justify-content-between pb-0">
+                        <div class="w-33 text-center">
+                            <div class="border d-none d-md-block" style="width:200px">
+                                <div class="pt-2 pb-2 pl-2 pr-2">
+                                    <span class="text-pink">NEXT WINNER IN</span><br>
+                                    <span id="demo"><br></span>
+                                </div>
                             </div>
                         </div>
-                        <a href="/" class="navbar-brand"><img class="opacity hover-opacity-off" src="armcandy-image/logo.png" width=100px height="60px" alt="ArmCandy"></a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar7">
+                        <a href="/" class="navbar-brand text-center w-33">
+                            <img class="opacity hover-opacity-off" src="armcandy-image/logo.png" width=100px height="60px" alt="ArmCandy">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="navbar-collapse collapse justify-content-end" id="navbar7">
-                            <ul class="navbar-nav ml-auto pt-3">
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><p class="hover-pink-text">CHOOSE YOUR BAG</p><span class="sr-only">Home</span></a>
+                        <div class="navbar-collapse collapse dual-nav w-33">
+                            <div class="d-flex flex-row ml-auto p-2">
+                                <div><a href="https://www.facebook.com/ArmCandyHB/" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-facebook text-primary p-1"></i></a></div>
+                                <div><a href="#" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-instagram text-info p-1"></i></a></div>
+                                <div><a href="#" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-twitter p-1"></i></a></div>
+                                <div><a href="https://www.youtube.com/channel/UChppZlhT1ljTGlKYuih15oQ" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-youtube text-danger p-1"></i></a></div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <div class="container">
+                        <div class="navbar-collapse collapse border-top border-bottom mb-2">
+                            <ul class="navbar-nav nav-fill w-100">
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">CHOOSE YOUR BAG</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="//codeply.com"><p class="hover-pink-text">HOW TO WIN</p></a>
+                                    <a class="nav-link small" href="#">HOW TO WIN</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><p class="hover-pink-text">RESULTS</p></a>
+                                    <a class="nav-link small" href="#">RESULTS</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="//codeply.com"><p class="hover-pink-text">WINNERS</p></a>
+                                    <a class="nav-link small" href="#">WINNERS</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><p class="hover-pink-text">ABOUT US</p></a>
+                                    <a class="nav-link small" href="#">ABOUT US</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><p class="hover-pink-text">CONTACT US</p></a>
+                                    <a class="nav-link small" href="#">CONTACT US</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </nav>
-                <hr>
+<!--navbar in mobil-->
+                <div class="d-block d-md-none">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                            <small><span class="navbar-toggler-icon"></span></small>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img class="opacity hover-opacity-off" src="armcandy-image/logo.png" width=100px height="60px" alt="ArmCandy">
+                        </a>
+                        <a class="" href="#">
+                            <img class="opacity hover-opacity-off" src="armcandy-image/geardigital.jpg" width=40px height="20px" alt="geardigital">
+                        </a>
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">CHOOSE YOUR BAG</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">HOW TO WIN</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">RESULTS</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">WINNERS</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">ABOUT US</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">CONTACT US</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
             </div>
-            <div class="container pt-3" style="height:50px">
-                <hr>
+<!--count down time in mobile-->            
+            <div class="border d-block d-md-none mb-2">
+                <div class="pt-2 pb-2 pl-2 pr-2 text-center">
+                    <span class="text-pink small pr-1">NEXT WINNER IN</span>
+                    <span id="demo-1"><br></span>
+                </div>
             </div>
             
             <div id="alertbox">
@@ -357,7 +418,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><button id="1-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-nature" onclick="buttonClick('1-4')" onmouseover="playBleep()" onmousedown="playSelect())">1</button>
+                                        <td><button id="1-4" class="badge color-pink btn opacity hover-opacity-off transition carousel-4" id="badge-background-nature" onclick="buttonClick('1-4')" onmouseover="playBleep()" onmousedown="playSelect()">1</button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -407,16 +468,7 @@
                             <button class="mt-3 btn-sm text-white color-pink opacity hover-opacity-off transition cursor border-0" id="submit-button" onclick="submit()" onclick="Alert.render('You look very pretty today.')" >Submit</button>
                         </div>
                     </div>
-                    
-                    <div id="dialogoverlay"></div>
-                    <div id="dialogbox">
-                        <div>
-                            <div id="dialogboxhead"></div>
-                            <div id="dialogboxbody"></div>
-                            <div id="dialogboxfoot"></div>
-                        </div>
-                    </div>
-                    
+            
                     <div class="col-12 col-lg-4">
                         <div class="pt-5 pr-xl-5 m-auto w-60 w-100">
                             <table id="t01" class="text-center w-100">
@@ -592,13 +644,15 @@
                 // Output the result in an element with id="demo"
                 document.getElementById("demo").innerHTML = days + "d " + hours + "h "
                     + minutes + "m " + seconds + "s ";
-                
+                document.getElementById("demo-1").innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
                 // If the count down is over, write some text 
                 if (distance < 0) {
                     clearInterval(x);
                     document.getElementById("demo").innerHTML = "EXPIRED";
+                    document.getElementById("demo-1").innerHTML = "EXPIRED";
                 }
-            }, 1000);
+            }, 0);
         </script>
         
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
