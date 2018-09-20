@@ -3,7 +3,7 @@
 <html>
     
     <head>
-        <title>Arm Candy-6th</title>
+        <title>Arm Candy-7th</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
@@ -43,11 +43,11 @@
             .cursor {cursor:pointer}
             .transition {transition:background 0.45s ease-in-out}
             
-            @media (max-width:700px) {.w-60 {width:60%!important};.hide-small {display:none!important};}
+            @media (max-width:700px) {.pt-sm {padding-top: 30px!important};.hide-small {display:none!important};}
             
-            @media (max-width:992px) and (min-width:701px) {.w-60 {width:60%!important};.pt-6 {padding-top: 105px!important};.hide-medium {display:none!important};}
+            @media (max-width:992px) and (min-width:701px) {.pt-lg {padding-top: 70px!important};.hide-medium {display:none!important};}
             
-            @media (min-width:993px) {.pt-6 {padding-top: 105px!important};.hide-large {display:none!important};}
+            @media (min-width:993px) {.pt-lg {padding-top: 70px!important};.hide-large {display:none!important};}
             
           
             .myBtnContainer0 {width:65px;height:190px;text-align: center;} 
@@ -65,7 +65,8 @@
             #timer {line-height: 100%}
             #demo {font-size: 20px;font-weight: bold;word-spacing: 4px;}
             table#timerTb td{padding:0 2px 0 2px!important;}
-            
+            .letter-space {letter-spacing: 0.6px}
+            .word-space {word-spacing: normal}
     /* rounded corner table */        
             table#t01 {
                 border:2px solid #CA858F;
@@ -103,7 +104,7 @@
             }  
             
     /* custom alert box*/
-            #alertbox {
+            .alertbox {
                 width:400px;
                 position:absolute;
                 top:50%;
@@ -120,7 +121,7 @@
                 display: none;
             }
             
-            #alertbox span{
+            .alertbox span{
                 color:#2ecc71;
                 font-size:40px;
                 display:block;
@@ -134,7 +135,8 @@
         <div class="container bg-grey d-none d-md-block" style="height:25px">
             <p class="text-right text-secondary pt-1 small">Arm Candy is powered by  Gear Digital</p>
         </div>
-        <div class="container bg-white pb-6">
+        <div class="container bg-white">
+<!--navbar in pc-->
             <div class="container">
                 <div class="d-none d-md-block">
                     <nav class="navbar navbar-light navbar-expand-md justify-content-between pb-0">
@@ -249,25 +251,25 @@
                     <span id="demo-1" class="small"></span>
                 </div>
             </div>
-            
-            <div id="alertbox">
-                <img class="rounded p-3" src="armcandy-image/dior.jpg">
-                <h4 class="p-2">Hi, this is your last ticket. <br>Get more tickets to increase the chance of winning <br>YOUR Dior.</h4>
-                <button class="btn-info opacity cursor pt-2 pb-2 pr-3 pl-3 rounded" onclick="closeBox()">Close</button>
+<!--alertbox-->             
+            <div id="alertbox" class="alertbox">
+                <img class="rounded p-3" src="armcandy-image/dior.jpg" style="width:200px;height:200px">
+                <h5 class="p-2 text-white">This is your last ticket. <br>Get more tickets to increase the chance of winning YOUR Dior.</h5>
+                <button class="btn-info btn-sm opacity cursor pt-2 pb-2 pr-3 pl-3 rounded" onclick="closeBox()">Close</button>
             </div>
        
             <div class="bg-grey d-none d-md-block">
                 <p class="text-center p-3 font-size-26">EVERY TICKET OFFERS YOU A CHANCE TO WIN!</p>
             </div>
-            
+<!--guess-->            
             <div>
-                <div class="row">
+                <div class="row pb-3">
                     <div class="col-12 col-lg-4 text-center">
-                        <img class="w-100" src="armcandy-image/candy.jpg" alt="candy">
+                        <div class="pt-5 mt-4"><iframe width="350" height="196.875" src="https://www.youtube.com/embed/org7gR1odqg?rel=0&autoplay=1&loop=1&playlist=org7gR1odqg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                     </div>
                     <div class="col-12 col-lg-4">
                         <h4 class="text-center font-weight-bold">GUESS THE SWEETS <br> WIN YOUR Dior</h4>
-                        <p class="text-center text-muted"><small>The closest guess to the actual number of sweets WINS the bag!</small></p>
+                        <p class="text-center text-muted"><small>The closest guess to the actual number of sweets <br>WINS the bag!</small></p>
                         <div class="row pt-3 mx-auto no-gutters">
                             <div id="btnGroup01" class="myBtnContainer0 scrollmenu-y mx-auto">
                                 <table class="table borderless bg-light opacity hover-opacity-off transition">
@@ -489,9 +491,8 @@
                             <button class="mt-3 btn-sm text-white color-pink opacity hover-opacity-off transition cursor border-0" id="submit-button" onclick="submit()" onclick="Alert.render('You look very pretty today.')" >Submit</button>
                         </div>
                     </div>
-            
-                    <div class="col-12 col-lg-4 border">
-                        <div class="display-middle pt-5 pr-xl-5 m-auto w-60 w-100">
+                    <div class="col-12 col-lg-4">
+                        <div class="p-4 p-sm-0 pt-lg pt-sm pr-xl-4 w-100">
                             <table id="t01" class="text-center w-100">
                                 <tr>
                                     <th colspan="3" class="align-middle"><span class="color-pink text-white p-1 rounded">Your Tickets & Plays</span></th>
@@ -515,50 +516,142 @@
                                     <td class="align-middle"><button id="answer3-btn" type="button" class="btn-sm text-white color-pink opacity hover-opacity-off transition cursor border-white" onclick="change(3)"><small>Change</small></button></td>
                                 </tr>
                             </table>
+                            <div class="text-center pt-3">
+                            <button id="playAlertButton" type="button" class="pt-1 pb-1 pr-2 pl-2 ml-2 rounded text-white color-pink border-0 opacity hover-opacity-off cursor" onclick=play()>Play Your Tickets</button>
+                            <div id="playAlertbox" class="alertbox">
+                                <img class="rounded p-3" src="armcandy-image/dior.jpg" style="width:200px;height:200px">
+                                <h5 class="p-2 text-white">Your Tickets Have Submitted Successfully. <br>Get more tickets to increase the chance of winning YOUR Dior.</h5>
+                                <button class="btn-info btn-sm opacity cursor pt-2 pb-2 pr-3 pl-3 rounded" onclick="closePlay()">Close</button>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <hr class="pb-4 d-none d-xl-block">
-            <hr class="d-none d-xl-block">
-        </div>
-    
-         
+<!--toggle between count and win-->           
+            <div style="background-color:#FCF7F8">
+                <div class="pt-3 mx-auto" style="width:300px;z-index: 999;">
+                    <span id="countBtn" onclick=count() class="p-3 border-top border-left" style="background-color:#FFFFFF;margin-right:-3px">The Official Count</span>
+                    <span id="winBtn" onclick=win() class="p-3 border-top border-left border-right" style="background-color:#FCF7F8">How To Win</span>
+                </div>
+                <div id="count" class="text-center p-5 border" style="background-color:#FFFFFF;margin-top:12px;font-family: Adobe Garamond Pro;font-style:italic">
+                    You have until Sunday 26th of August 2018 at 23:59 to submit your entry.<br>The official count will be made as soon as possible after this date.<br>The count will be filmed and published on our YouTube channel. The final number will be verified by 4pm.<br>
+                    <a href="https://www.youtube.com/channel/UChppZlhT1ljTGlKYuih15oQ" target="_blank"><button class="small mt-2 p-2 bg-danger text-white rounded border-0 opacity hover-opacity-off cursor"><i class="fab fa-youtube pr-1"></i> VISIT OUR YOUTUBE PAGE</button></a>
+                </div>
+                <div id="win" class="text-center p-5 border" style="display:none;background-color:#FFFFFF;margin-top:12px;font-family: Adobe Garamond Pro;font-style:italic">
+                    Choose your dream handbag, and how many tickets you'd like to play.
+                    Each ticket gives you the chance to make a guess at the number of sweets in the jar.<br>
+                    The more guesses you make, the more chance you have of providing the closest guess.<br>
+                    The closest guess wins the dream handbag! <br>
+                    Full rules of play can be viewed in our Terms and conditions.<br>
+                    <a href="https://www.youtube.com/channel/UChppZlhT1ljTGlKYuih15oQ" target="_blank"><button class="small mt-2 p-2 bg-danger text-white rounded border-0 opacity hover-opacity-off cursor"><i class="fab fa-youtube pr-1"></i> VISIT OUR YOUTUBE PAGE</button></a>
+                </div>
+            </div>
+<!--other medias-->            
+            <div class="bg-grey border-bottom d-block d-md-none">
+                <div class="">
+                    <div class="d-flex flex-row justify-content-center p-2">
+                        <div><a href="https://www.facebook.com/ArmCandyHB/" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-facebook text-primary p-1"></i></a></div>
+                        <div><a href="#" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-instagram text-info p-1"></i></a></div>
+                        <div><a href="#" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-twitter p-1"></i></a></div>
+                        <div><a href="https://www.youtube.com/channel/UChppZlhT1ljTGlKYuih15oQ" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-youtube text-danger p-1"></i></a></div>
+                    </div>
+                </div>
+            </div>
+<!--game rule-->     
+            <div class="bg-grey border-bottom">       
+                <div class="row mx-auto pt-5 pb-5" style="max-width:1000px;">
+                    <div class="text-center col-sm-4 line-height-s">
+                        <span style="font-size:50px"><i class="fas fa-shopping-bag text-pink border rounded-circle mb-1" style="padding:20px 25px 20px 25px"></i></span><br>
+                        <span class="font-weight-bold">STEP 1</span><br>
+                        <span class="text-secondary">CHOOSE YOUR BAG</span><br>
+                        <span class="small text-secondary">Selected bags from world leading brands</span>
+                    </div>
+                    <div class="text-center col-sm-4 line-height-s">
+                        <span style="font-size:50px"><i class="fas fa-prescription-bottle text-pink border rounded-circle mb-1" style="padding:20px 25px 20px 25px"></i></span><br>
+                        <span class="font-weight-bold">STEP 2</span><br>
+                        <span class="text-secondary">PLAY YOUR TICKETS</span><br>
+                        <span class="small text-secondary">Guess how many sweets are in the jar</span>
+                    </div>
+                    <div class="text-center col-sm-4 line-height-s">
+                        <span style="font-size:50px"><i class="fas fa-award text-pink border rounded-circle mb-1" style="padding:20px 25px 20px 25px"></i></span><br>
+                        <span class="font-weight-bold">STEP 3</span><br>
+                        <span class="text-secondary">WINNERS SELECTED</span><br>
+                        <span class="small text-secondary">The closest guess wins their chosen bag!</span>
+                    </div>
+                </div>
+            </div>
+            <!--Authority-->   
+            <div class="container text-center pt-2 pb-2 pr-5 pl-5 line-height-s bg-grey">
+                <span class="small">Our count is filmed and authenticated by an independent third-party</span><br>
+                <span class="text-muted small">Anyone connected with Arm Candy or its subsidiary companies are ineligible to play this competition</span>
+            </div>
+<!--footer-->           
+            <div class="container row mx-auto no-gutters p-2" style="background-color:#FFFFFF">
+                <div class="col-sm-1 text-center pt-3 pb-3 pt-sm-0 pb-sm-0"><img src="armcandy-image/logo.png" style="width:60px;height:30px"></div>
+                <div class="col-sm-1 text-center text-pink pt-sm-2" style="font-size:12.5px">01618187110</div>
+                <div class="col-sm-1 font-sm text-center pt-sm-2">info@arm-candy.uk</div>
+                <div class="col-sm-2 col-6 text-right text-sm-center font-sm pt-sm-2 letter-space">Terms&Conditions</div>
+                <div class="col-sm-1 col-6 text-left text-sm-center font-sm pt-sm-2 pl-3 pl-sm-0 word-space">Privacy Policy</div>
+                <div class="col-sm-6 text-sm-right text-center text-muted line-height-s pt-4 pb-4 pt-sm-0 pb-sm-0" style="font-size:9px"><b>Copyright © 2017 ArmCandy. Owned by Gear Digital Ltd.</b><br>Registered Office: 7c Blackfriars House, Parsonage, Manchester, M3 2JA<br>Arm Candy Registration Number 09512370</div>
+            </div>
+        </div>  
+        <div class="container bg-grey d-none d-md-block" style="height:25px"></div>           
+
         <script>
+            
 //button click sound effect        
             function playBleep() {
                 var bleep = new Audio();
                 bleep.src = 'bleep.mp3';
                 bleep.play();
             }
-            
             function playSelect() {
                 var select = new Audio();
                 select.src = 'select20.mp3';
                 select.play();
             }
-            
+
+//disableButtons  ???         
             window.onload = function() {
                 disableButtons();
             }
             
-                /*
-                document.getElementById("btnGroup01").addEventListener("wheel", myFunction);
-                function myFunction() {
-                    this.style.fontSize = "35px";
-                } */
-            
-            function disableButtons() {             
+            function disableButtons() {
+                
+                var disablePlayButton = false;
+                
                 for (var answerNum = 1; answerNum <= 3; answerNum++){
-                    document.getElementById("answer" + answerNum + "-btn").disabled = (document.getElementById("answer" + answerNum).innerHTML == '');
+                    if (document.getElementById("answer" + answerNum).innerHTML == '') {
+                        document.getElementById("answer" + answerNum + "-btn").disabled = true;
+                        disablePlayButton = true;
+                    }
+                    else
+                        document.getElementById("answer" + answerNum + "-btn").disabled = false;
                 }
+                
+                document.getElementById("playAlertButton").disabled = disablePlayButton;
             }
+            
             function closeBox() {
                 if (document.getElementById("alertbox").style.display = "block"){
                     document.getElementById("alertbox").style.display = "none";
                 }
             }
+                
+//submit all the guesses          
+            function play() {
+                document.getElementById("playAlertbox").style.display = "block";
+                disableButtons();
+            }
             
+            function closePlay() {
+                if (document.getElementById("playAlertbox").style.display = "block"){
+                    document.getElementById("playAlertbox").style.display = "none";
+                }
+            }
+            
+//four digits number            
             function buttonClick(buttonId){
                 var element = buttonId[2] - 1;
                 
@@ -599,7 +692,7 @@
                 document.getElementById("current").innerHTML = number;
             }
 
-            
+//submit four digits number            
             function submit(){
                 
                 var current = document.getElementById("current").innerHTML;
@@ -656,7 +749,7 @@
            
 //count down timer
             // Set the date we're counting down to
-            var countDownDate = new Date("Sun Oct 26 2018 12:00:00").getTime();
+            var countDownDate = new Date("2018-15-10T24:00:00").getTime();
             
             // Update the count down every 1 second
             var x = setInterval(function() {
@@ -693,6 +786,20 @@
                 }
             }, 0);
             
+//toggle between count and win            
+            function win(){
+                document.getElementById("win").style.display = "block";
+                document.getElementById("win").style.backgroundColor = "#FFFFFF";
+                document.getElementById("winBtn").style.backgroundColor = "#FFFFFF";
+                document.getElementById("countBtn").style.backgroundColor = "#FCF7F8";
+                document.getElementById("count").style.display = "none";
+            }
+            function count(){
+                document.getElementById("count").style.display = "block";
+                document.getElementById("countBtn").style.backgroundColor = "#FFFFFF";
+                document.getElementById("winBtn").style.backgroundColor = "#FCF7F8";
+                document.getElementById("win").style.display = "none";
+            }
         </script>
         
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
