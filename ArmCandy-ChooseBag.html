@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        <title>bag-choice</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+      
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+        
+        <style>
+            
+            * {box-sizing:border-box}
+             body {font-family:sans-serif;background-color:#F2F1F1}
+            .bgimg {background-image:url(gig-image/electronic%20guitar.jpg);background-position: center;background-size: cover;background-repeat: no-repeat;min-height:100%;filter:grayscale(30%);}
+            .border-5 {border-width:5px!important}
+            .opacity {opacity:0.9}
+            .opacity-hover:hover {opacity:0.8}
+            .opacity-lg {opacity:0.8}
+            .hover-opacity-off:hover {opacity:1.0}
+            
+            .display-middle {position:absolute;top:52%;left:50%;transform:translate(-50%,-50%);}
+            .display-top {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+            .icon-size {font-size: 24px;}
+            .hover-pink-text:hover {color:#CA858F!important}
+            .text-pink {color:#CA858F}
+            .hover-white:hover {color:white!important}
+            .hover-info:hover {background-color:#40CEBF!important} 
+            
+            .grayscale {filter:grayscale(80%)}
+            .line-height-s {line-height: 1.0}
+            .bg-grey {background-color:#F3F0F1}
+            .font-size-26 {font-size:28px}
+            .pb-6 {padding-bottom:20px}
+            
+            .cursor {cursor:pointer}
+            .transition {transition:background 0.45s ease-in-out}
+            
+            @media (max-width:700px) {.hide-small {display:none!important};}
+            
+            @media (max-width:992px) and (min-width:701px) {.hide-medium {display:none!important};}
+            
+            @media (min-width:993px) {.hide-large {display:none!important};}
+            
+          
+            .myBtnContainer0 {width:65px;height:190px;text-align: center;} 
+            .badge {width:40px;height:36px;opacity:0.7;color:white;}
+             div.scrollmenu-y {overflow-y:scroll;white-space: nowrap;}
+            .borderless td {border: none;}
+            .color-pink {background-color:#CA858F}
+            .transition {transition:background 0.45s ease-in-out}
+            .col-3-0 {width:30%}
+            .col-4-0 {width:40%}
+            ::-webkit-scrollbar {display:none;}
+            .w-33 {width:33.33%}
+            .font-lg {font-size:23px;}
+            .font-sm {font-size:10px;word-spacing: 6px}
+            #timer {line-height: 100%}
+            #demo {font-size: 20px;font-weight: bold;word-spacing: 4px;}
+            table#timerTb td{padding:0 2px 0 2px!important;}
+            .letter-space {letter-spacing: 0.6px}
+            .word-space {word-spacing: normal}
+    
+    /*ticket table */ 
+            table#t1 {
+                border-collapse:separate;
+                border:solid #CA858F 1px;
+                border-radius:6px;
+                -moz-border-radius:6px;
+                border-spacing:2px;
+            }
+            table#t1 td:first-child {
+                border-right:solid #CA858F 1px;
+            }
+            
+            table#t2 {
+                border-collapse:separate;
+                border:solid #CA858F 1px;
+                border-radius:6px;
+                -moz-border-radius:6px;
+                border-spacing:2px;
+            }
+            table#t2 td:first-child {
+                border-right:solid #CA858F 1px;
+            } 
+            
+            table#t3 {
+                border-collapse:separate;
+                border:solid #CA858F 1px;
+                border-radius:6px;
+                -moz-border-radius:6px;
+                border-spacing:2px;
+            }
+            table#t3 td:first-child {
+                border-right:solid #CA858F 1px;
+            } 
+            
+            table#t4 {
+                border-collapse:separate;
+                border:solid #CA858F 1px;
+                border-radius:6px;
+                -moz-border-radius:6px;
+                border-spacing:2px;
+            }
+            table#t4 td:first-child {
+                border-right:solid #CA858F 1px;
+            }  
+            
+            
+            .numBorder {
+                border:1px solid #CA858F;
+                border-radius: 4px;
+                background-color:#CA858F;
+                color:white;
+                padding-right:2px;
+                padding-left:2px;
+                font-size: 11.5px;
+            }
+            
+            ::-webkit-input-placeholder {
+                text-align: center;
+            }
+
+            :-moz-placeholder { /* Firefox 18- */
+                text-align: center;  
+            }
+
+            ::-moz-placeholder {  /* Firefox 19+ */
+                text-align: center;  
+            }
+
+            :-ms-input-placeholder {  
+                text-align: center; 
+            }
+            
+            .w-25 {width:25%}
+            .change-answer {}
+           
+            @keyframes shake {
+              10%, 90% {
+                transform: translate3d(-1px, 0, 0);
+              }
+
+              20%, 80% {
+                transform: translate3d(2px, 0, 0);
+              }
+
+              30%, 50%, 70% {
+                transform: translate3d(-4px, 0, 0);
+              }
+
+              40%, 60% {
+                transform: translate3d(4px, 0, 0);
+              }
+            }
+
+            .apply-shake {
+                animation: shake 0.2s cubic-bezier(.36,.07,.19,.97) both;
+            }
+            
+    /* custom alert box*/
+            #alertbox {
+                width:400px;
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                color:black;
+                background:#CA858F;
+                box-shadow: 0 0 20px #CA858F;
+                border-radius: 8px;
+                overflow: hidden;
+                text-align: center;
+                padding: 10px;
+                z-index: 9999;
+                display: none;
+            }
+            
+            #alertbox span{
+                color:#2ecc71;
+                font-size:40px;
+                display:block;
+                margin:20px 0;
+            }
+            .display-0 {display:none}
+            .display-b {display:block}
+            .mt-lg {margin-top:220px}
+            .text-grey {color:#999999}
+            .slide-wrapper {-webkit-animation: slide 18s ease infinite;}
+            .border-pink {border-color:#CA858F!important}
+            
+            .noselect {
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                supported by Chrome and Opera */
+            }
+        
+        </style>
+        
+    </head>
+    <body> 
+        <div class="container bg-grey d-none d-md-block" style="height:25px">
+            <p class="text-right text-secondary pt-1 small">Arm Candy is powered by  Gear Digital</p>
+        </div>
+        <div class="container bg-white">
+<!--navbar in pc-->
+            <div class="container">
+                <div class="d-none d-md-block">
+                    <nav class="navbar navbar-light navbar-expand-md justify-content-between pb-0">
+                        <div class="w-33 text-center">
+                            <div class="border d-none d-md-block" style="width:200px">
+                                <div class="pt-2 pb-2 pl-2 pr-2">
+                                    <span class="text-pink">NEXT WINNER IN</span><br>
+                                    <div id="timer">
+                                        <span id="demo" class="pl-2"></span><br>
+                                        <span class="font-sm">DAYS HOURS MINS SECS</span>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/" class="navbar-brand text-center w-33">
+                            <img class="opacity hover-opacity-off" src="armcandy-image/logo.png" width=100px height="60px" alt="ArmCandy">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse dual-nav w-33">
+                            <div class="d-flex flex-row ml-auto p-2">
+                                <div><a href="https://www.facebook.com/ArmCandyHB/" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-facebook text-primary p-1"></i></a></div>
+                                <div><a href="#" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-instagram text-info p-1"></i></a></div>
+                                <div><a href="#" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-twitter p-1"></i></a></div>
+                                <div><a href="https://www.youtube.com/channel/UChppZlhT1ljTGlKYuih15oQ" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-youtube text-danger p-1"></i></a></div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <div class="container">
+                        <div class="navbar-collapse collapse border-top border-bottom mb-2">
+                            <ul class="navbar-nav nav-fill w-100">
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">CHOOSE YOUR BAG</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">HOW TO WIN</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">RESULTS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">WINNERS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">ABOUT US</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#">CONTACT US</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+<!--navbar in mobil-->
+                <div class="d-block d-md-none">
+                    <nav class="navbar navbar-expand-md navbar-light" style="margin-bottom:-10px;margin-top:-28px">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation" style="margin-left:-30px">
+                            <small><span class="navbar-toggler-icon"></span></small>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img class="opacity hover-opacity-off" src="armcandy-image/logo.png" width=70px height="40px" alt="ArmCandy">
+                        </a>
+                        <a class="" href="#">
+                            <img class="opacity hover-opacity-off" src="armcandy-image/geardigital.jpg" width=40px height="20px" alt="geardigital" style="margin-right:-30px">
+                        </a>
+                        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-center">
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">CHOOSE YOUR BAG</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">HOW TO WIN</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">RESULTS</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">WINNERS</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">ABOUT US</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link small" href="#"><span class="text-pink">CONTACT US</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+<!--count down time in mobile-->            
+            <div class="border-top border-bottom d-block d-md-none mb-2">
+                <div class="pl-2 pr-2 text-center"> 
+                    <table id="timerTb" class="mx-auto">
+                        <tr>
+                            <td rowspan="2" class="small">NEXT WINNER IN</td>
+                            <td id="days" class="small text-pink"></td>
+                            <td id="hours" class="small text-pink"></td>
+                            <td id="minutes" class="small text-pink"></td>
+                            <td id="seconds" class="small text-pink"></td>
+                        </tr>
+                        <tr>
+                            <td class="font-sm text-pink">DAYS</td>
+                            <td class="font-sm text-pink">HOURS</td>
+                            <td class="font-sm text-pink">MINS</td>
+                            <td class="font-sm text-pink">SECS</td>
+                        </tr>
+                    </table>
+                    <span id="demo-1" class="small"></span>
+                </div>
+            </div>
+            
+            <div id="alertbox">
+                <img class="rounded p-3" src="armcandy-image/dior.jpg">
+                <h4 class="p-2">Hi, this is your last ticket. <br>Get more tickets to increase the chance of winning <br>YOUR Dior.</h4>
+                <button class="btn-info opacity cursor pt-2 pb-2 pr-3 pl-3 rounded" onclick="closeBox()">Close</button>
+            </div>
+<!--bags carousel-->    
+            <div class="container row mx-auto pb-3">
+                <div class="col-md-1 m-auto d-none d-md-block">
+                    <div id="img1" class="text-center" onclick=showimg1lg()><img src="armcandy-image/Chanel0.jpg" class="border" style="max-width:55px;max-height:55px"></div>
+                    <div id="img2" class="text-center mt-2" onclick=showimg2lg()><img src="armcandy-image/Chanel1.jpg" class="border" style="max-width:55px;max-height:55px"></div>
+                    <div id="img3" class="text-center mt-2" onclick=showimg3lg()><img src="armcandy-image/Chanel2.jpg" class="border" style="max-width:55px;max-height:55px"></div>
+                </div>
+                <div class="col-md-5 d-flex flex-row">
+                    <div id="pre" onclick=pre() class="m-auto"><h3><i class="fas fa-angle-left text-secondary"></i></h3></div>
+                    <div class="slide-wrapper m-auto">
+                        <div class="">
+                            <img id="img1lg" class="mySlides noselect w-100" src="armcandy-image/Chanel0.jpg" alt="First slide" style="max-width:300px;max-height:500px;display:block">
+                        </div>
+                        <div class="">
+                            <img id="img2lg" class="mySlides noselect w-100" src="armcandy-image/Chanel1.jpg" alt="Second slide" style="max-width:300px;max-height:500px;display:none">
+                        </div>
+                        <div class="">
+                            <img id="img3lg" class="mySlides noselect w-100" src="armcandy-image/Chanel2.jpg" alt="Third slide" style="max-width:300px;max-height:500px;display:none">
+                        </div>
+                    </div>
+                    <div id="next" onclick=next() class="m-auto"><h3><i class="fas fa-angle-right text-secondary"></i></h3></div>
+                </div>
+<!--chose tickets-->                  
+                <div class="col-md-6">
+                    <div class="line-height-s border-bottom">
+                        <h5 class="font-weight-bold"><small>PLAY TODAY TO WIN THIS WEEK</small></h5>
+                        <p class="text-grey">CHANEL Boy Chanel Handbag Calfskin & Ruthenium-Finish Metal</p>
+                        <p class="text-pink">£3,480</p>
+                    </div>
+                    <div class="pt-2">
+                        <h5>CHOOSE YOUR TICKETS</h5>
+                    </div>
+                    <div class="container">
+                        <form onsubmit="subT()">
+                            <div class="row rounded p-2 mb-2 border">
+                                <div class="pl-1 pt-1" style="width:7%">
+                                    <input type="radio" name="ticket" value="http://jialei.co.uk/armcandy-new.html">
+                                </div>
+                                <div class="pt-2 small border-right" style="width:18%">
+                                    <b>1</b> for <b>£2</b>
+                                </div>
+                                <div class="pl-2 text-pink font-weight-bold line-height-s" style="width:66%">
+                                    SINGLE PLAY<br>
+                                    <span class="text-grey small">Your best guess for a single chance to WIN</span>
+                                </div>
+                                <div class="p-1" style="width:8%">
+                                    <i id="tick1" class="fas fa-check text-white bg-success rounded-circle p-1 display-0" style="width:22px;height:22px"></i>
+                                </div>
+                            </div>
+                            <div class="row rounded p-2 mb-2 border">
+                                <div class="pl-1 pt-1" style="width:7%">
+                                    <input type="radio" name="ticket" value="http://jialei.co.uk/armcandy-new.html" checked>
+                                </div>
+                                <div class="pt-2 small border-right" style="width:18%">
+                                    <b>3</b> for <b>£3</b>
+                                </div>
+                                <div class="pl-2 text-pink font-weight-bold line-height-s" style="width:66%">
+                                    MOST POPULAR<br>
+                                    <span class="text-grey small">Triple your chance for just £1 per play!</span>
+                                </div>
+                                <div class="p-1" style="width:8%">
+                                    <i class="fas fa-check text-white bg-success rounded-circle p-1 display-0" style="width:22px;height:22px"></i>
+                                </div>
+                            </div>
+                            <div class="row border rounded p-2 mb-2">
+                                <div class="pl-1 pt-1" style="width:7%">
+                                    <input type="radio" name="ticket" value="https://arm-candy.uk/">
+                                </div>
+                                <div class="pt-2 small border-right" style="width:18%">
+                                    <b>10</b> for <b>£5</b>
+                                </div>
+                                <div class="pl-2 text-pink font-weight-bold line-height-s" style="width:66%">
+                                    HEDGE YOUR BETS!<br>
+                                    <span class="text-grey small">50p per play!! 10 guesses can improve your chances</span>
+                                </div>
+                                <div class="p-1" style="width:8%">
+                                    <i class="fas fa-check text-white bg-success rounded-circle p-1 display-0" style="width:22px;height:22px"></i>
+                                </div>
+                            </div>
+                            <div class="row border rounded p-2 mb-2">
+                                <div class="pl-1 pt-1" style="width:7%">
+                                    <input type="radio" name="ticket" value="http://jialei.co.uk/armcandy-25tickets.html">
+                                </div>
+                                <div class="pt-2 small border-right" style="width:18%">
+                                    <b>25</b> for <b>£10</b>
+                                </div>
+                                <div class="pl-2 text-pink font-weight-bold line-height-s" style="width:66%">
+                                    BIGGEST CHANCE<br>
+                                    <span class="text-grey small">40p per guess! £40 discount when buying the same amount of single tickets</span>
+                                </div>
+                                <div class="p-1" style="width:8%">
+                                    <i class="fas fa-check text-white bg-success rounded-circle p-1 display-0" style="width:22px;height:22px"></i>
+                                </div>
+                            </div>
+                            <div class="text-md-left text-center">
+                                <button type="submit" class="border-0 color-pink text-white rounded p-2 mt-2">CONFIRM SELECTION</button>
+                            </div>
+                        </form>  
+                            <a href="http://jialei.co.uk/armcandy-homepage.html" target="_blank"><button class="border-0 color-pink text-white rounded p-2 mt-2">CHANGE BAG</button></a>
+                        <!--
+                        <form onsubmit="subT()">
+                           <table id="t1" class="w-100 mb-2 line-height-s" onclick="subTicket('1')">
+                               <tr>
+                                   <td class="p-1" style="width:25%">
+                                       <span class="float-left text-dark border rounded-circle border-pink">
+                                           <input type="radio" name="ticket" value="https://arm-candy.uk/" checked>
+                                           
+                                           <i class="far fa-circle color-pink rounded-circle small" style="margin:2px"></i>
+                                       </span>
+                                       <span class="pl-2 pr-2 small"><b>1</b> for <b>£2</b></span>
+                                   </td> 
+                                   <td class="p-1" style="width:70%">
+                                       <span class="text-pink font-weight-bold">SINGLE PLAY</span><br>
+                                       <span class="text-grey small">Your best guess for a single chance to WIN</span>
+                                   </td>
+                                   <td class="p-1" style="width:5%"><i class="fas fa-check text-white bg-success rounded-circle p-1 display-0"></i></td>
+                               </tr> 
+                           </table>
+                           <table id="t2" class="w-100 mb-2 line-height-s" onclick="subTicket('2')">
+                               <tr>
+                                   <td class="p-1" style="width:25%"><span class="float-left text-grey">
+                                       <input type="radio" name="ticket" value="https://arm-candy.uk/" checked>
+                                       
+                                       <i class="far fa-circle pr-2"></i>
+                                       </span> 
+                                       <span class="pr-2 small">
+                                           <b>3</b> for <b>£3</b>
+                                       </span>
+                                   </td> 
+                                   <td class="p-1" style="width:70%">
+                                       <span class="text-pink font-weight-bold">MOST POPULAR</span><br>
+                                       <span class="text-grey small">Triple your chance for just £1 per play!</span>
+                                   </td>
+                                   <td class="p-1" style="width:5%"><i class="fas fa-check text-white bg-success rounded-circle p-1 "></i></td>
+                               </tr> 
+                           </table>
+                           <table id="t3" class="w-100 mb-2 line-height-s" onclick="subTicket('3')">
+                               <tr>
+                                   <td class="p-1" style="width:25%"><span class="float-left text-grey"><i class="far fa-circle pr-2"></i></span> <span class="pr-2 small"><b>10</b> for <b>£5</b></span></td> 
+                                   <td class="p-1" style="width:70%">
+                                       <span class="text-pink font-weight-bold">HEDGE YOUR BETS!</span><br>
+                                       <span class="text-grey small">50p per play!! 10 guesses can improve your chances</span>
+                                   </td>
+                                   <td class="p-1" style="width:5%"><i class="fas fa-check text-white bg-success rounded-circle p-1 "></i></td>
+                               </tr> 
+                           </table>
+                           <table id="t4" class="w-100 line-height-s" onclick="subTicket('4')">
+                               <tr>
+                                   <td class="p-1" style="width:25%"><span class="float-left text-grey"><i class="far fa-circle pr-2"></i></span> <span class="pr-2 small"><b>25</b> for <b>£10</b></span></td> 
+                                   <td class="p-1" style="width:70%">
+                                       <span class="text-pink font-weight-bold">BIGGEST CHANCE</span><br>
+                                       <span class="text-grey small">40p per guess! £40 discount when buying the same amount of single tickets</span>
+                                   </td>
+                                   <td class="p-1" style="width:5%"><i class="fas fa-check text-white bg-success rounded-circle p-1 "></i></td>
+                               </tr> 
+                           </table>
+                        </form>
+                    </div>
+                    <div class="">
+                        <button id="submit" class="border-0 color-pink text-white rounded p-2 mt-2" onclick="submit()">CONFIRM SELECTION</button><br>
+                        <button class="border-0 color-pink text-white rounded p-2 mt-2">CHANGE BAG</button>
+                    </div>-->
+                    </div>
+                </div>
+            </div>
+<!--toggle between count and win-->           
+            <div style="background-color:#FCF7F8">
+                <div class="pt-3 mx-auto" style="width:300px;z-index: 999;">
+                    <span id="countBtn" onclick=count() class="p-3 border-top border-left" style="background-color:#FFFFFF;margin-right:-3px">The Official Count</span>
+                    <span id="winBtn" onclick=win() class="p-3 border-top border-left border-right" style="background-color:#FCF7F8">How To Win</span>
+                </div>
+                <div id="count" class="text-center p-5 border" style="background-color:#FFFFFF;margin-top:12px;font-family: Adobe Garamond Pro;font-style:italic">
+                    You have until Sunday 26th of August 2018 at 23:59 to submit your entry.<br>The official count will be made as soon as possible after this date.<br>The count will be filmed and published on our YouTube channel. The final number will be verified by 4pm.<br>
+                    <a href="https://www.youtube.com/channel/UChppZlhT1ljTGlKYuih15oQ" target="_blank"><button class="small mt-2 p-2 bg-danger text-white rounded border-0 opacity hover-opacity-off cursor"><i class="fab fa-youtube pr-1"></i> VISIT OUR YOUTUBE PAGE</button></a>
+                </div>
+                <div id="win" class="text-center p-5 border" style="display:none;background-color:#FFFFFF;margin-top:12px;font-family: Adobe Garamond Pro;font-style:italic">
+                    Choose your dream handbag, and how many tickets you'd like to play.
+                    Each ticket gives you the chance to make a guess at the number of sweets in the jar.<br>
+                    The more guesses you make, the more chance you have of providing the closest guess.<br>
+                    The closest guess wins the dream handbag! <br>
+                    Full rules of play can be viewed in our Terms and conditions.<br>
+                    <a href="https://www.youtube.com/channel/UChppZlhT1ljTGlKYuih15oQ" target="_blank"><button class="small mt-2 p-2 bg-danger text-white rounded border-0 opacity hover-opacity-off cursor"><i class="fab fa-youtube pr-1"></i> VISIT OUR YOUTUBE PAGE</button></a>
+                </div>
+            </div>
+<!--other medias-->            
+            <div class="bg-grey border-bottom d-block d-md-none">
+                <div class="">
+                    <div class="d-flex flex-row justify-content-center p-2">
+                        <div><a href="https://www.facebook.com/ArmCandyHB/" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-facebook text-primary p-1"></i></a></div>
+                        <div><a href="#" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-instagram text-info p-1"></i></a></div>
+                        <div><a href="#" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-twitter p-1"></i></a></div>
+                        <div><a href="https://www.youtube.com/channel/UChppZlhT1ljTGlKYuih15oQ" class="cursor pt-2 pr-1"><i class="font-lg opacity-lg hover-opacity-off fab fa-youtube text-danger p-1"></i></a></div>
+                    </div>
+                </div>
+            </div>
+<!--game rule-->     
+            <div class="bg-grey border-bottom">       
+                <div class="row mx-auto pt-5 pb-5" style="max-width:1000px;">
+                    <div class="text-center col-sm-4 line-height-s">
+                        <span style="font-size:50px"><i class="fas fa-shopping-bag text-pink border rounded-circle mb-1" style="padding:20px 25px 20px 25px"></i></span><br>
+                        <span class="font-weight-bold">STEP 1</span><br>
+                        <span class="text-secondary">CHOOSE YOUR BAG</span><br>
+                        <span class="small text-secondary">Selected bags from world leading brands</span>
+                    </div>
+                    <div class="text-center col-sm-4 line-height-s">
+                        <span style="font-size:50px"><i class="fas fa-prescription-bottle text-pink border rounded-circle mb-1" style="padding:20px 25px 20px 25px"></i></span><br>
+                        <span class="font-weight-bold">STEP 2</span><br>
+                        <span class="text-secondary">PLAY YOUR TICKETS</span><br>
+                        <span class="small text-secondary">Guess how many sweets are in the jar</span>
+                    </div>
+                    <div class="text-center col-sm-4 line-height-s">
+                        <span style="font-size:50px"><i class="fas fa-award text-pink border rounded-circle mb-1" style="padding:20px 25px 20px 25px"></i></span><br>
+                        <span class="font-weight-bold">STEP 3</span><br>
+                        <span class="text-secondary">WINNERS SELECTED</span><br>
+                        <span class="small text-secondary">The closest guess wins their chosen bag!</span>
+                    </div>
+                </div>
+            </div>
+            <!--Authority-->   
+            <div class="container text-center pt-2 pb-2 pr-5 pl-5 line-height-s bg-grey">
+                <span class="small">Our count is filmed and authenticated by an independent third-party</span><br>
+                <span class="text-muted small">Anyone connected with Arm Candy or its subsidiary companies are ineligible to play this competition</span>
+            </div>
+<!--footer-->           
+            <div class="container row mx-auto no-gutters p-2" style="background-color:#FFFFFF">
+                <div class="col-lg-1 col-md-1 text-center pt-3 pb-3 pt-sm-0 pb-sm-0"><img src="armcandy-image/logo.png" style="width:60px;height:30px"></div>
+                <div class="col-lg-1 col-md-2 text-center text-pink pt-sm-2" style="font-size:12.5px">01618187110</div>
+                <div class="col-md-1 font-sm text-center pt-sm-2">info@arm-candy.uk</div>
+                <div class="col-md-2 col-6 text-right text-sm-center font-sm pt-sm-2 letter-space">Terms&Conditions</div>
+                <div class="col-md-1 col-6 text-left text-sm-center font-sm pt-sm-2 pl-3 pl-sm-0 word-space">Privacy Policy</div>
+                <div class="col-lg-6 col-md-5 text-md-right text-center text-muted line-height-s pt-4 pb-4 pt-sm-0 pb-sm-0" style="font-size:9px"><b>Copyright © 2017 ArmCandy. Owned by Gear Digital Ltd.</b><br>Registered Office: 7c Blackfriars House, Parsonage, Manchester, M3 2JA<br>Arm Candy Registration Number 09512370</div>
+            </div>
+        </div>  
+        <div class="container bg-grey d-none d-md-block" style="height:25px"></div>           
+
+        <script>
+
+//count down timer
+            // Set the date we're counting down to
+            var countDownDate = new Date("2018-09-02T24:00:00").getTime();
+            
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+                
+                // Get todays date and time
+                var now = new Date().getTime();
+                
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+                
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24)).toLocaleString(undefined,{minimumIntegerDigits: 2});
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toLocaleString(undefined,{minimumIntegerDigits: 2});
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toLocaleString(undefined,{minimumIntegerDigits: 2});
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000).toLocaleString(undefined,{minimumIntegerDigits: 2});
+                
+                // Output the result in an element with id="demo"
+              
+                document.getElementById("demo").innerHTML = days + ": " + hours + ": "
+                    + minutes + ": " + seconds + " ";
+                
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+                /*
+                document.getElementById("demo-1").innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";*/
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                    document.getElementById("demo-1").innerHTML = "EXPIRED";
+                }
+            }, 0);
+            
+//toggle between count and win            
+            function win(){
+                document.getElementById("win").style.display = "block";
+                document.getElementById("win").style.backgroundColor = "#FFFFFF";
+                document.getElementById("winBtn").style.backgroundColor = "#FFFFFF";
+                document.getElementById("countBtn").style.backgroundColor = "#FCF7F8";
+                document.getElementById("count").style.display = "none";
+            }
+            function count(){
+                document.getElementById("count").style.display = "block";
+                document.getElementById("countBtn").style.backgroundColor = "#FFFFFF";
+                document.getElementById("winBtn").style.backgroundColor = "#FCF7F8";
+                document.getElementById("win").style.display = "none";
+            }
+            
+//show large picture + carousel
+            function showimg1lg() {
+                document.getElementById("img1lg").style.display = "block";
+                document.getElementById("img2lg").style.display = "none";
+                document.getElementById("img3lg").style.display = "none";
+            }
+            
+            function showimg2lg() {
+                document.getElementById("img1lg").style.display = "none";
+                document.getElementById("img2lg").style.display = "block";
+                document.getElementById("img3lg").style.display = "none";
+            }
+            
+            function showimg3lg() {
+                document.getElementById("img1lg").style.display = "none";
+                document.getElementById("img2lg").style.display = "none";
+                document.getElementById("img3lg").style.display = "block";
+            }
+            
+            function pre() {
+                var min = 1, max = 3;
+                
+                for (var element = max; element >= min; element--){
+                    if (document.getElementById("img" + element + "lg").style.display == "block"){
+                        if (element != min) {
+                            document.getElementById("img" + element + "lg").style.display = "none";
+                            document.getElementById("img" + (element-1) + "lg").style.display = "block";
+                        }
+                        else {
+                            document.getElementById("img" + element + "lg").style.display = "none";
+                            document.getElementById("img" + max + "lg").style.display = "block";
+                        }
+                        return;
+                    } 
+                }
+            }
+            
+            function next() {
+                var min = 1, max = 3;
+                for (var element = min; element <= max; element++){
+                    if (document.getElementById("img" + element + "lg").style.display == "block"){
+                        if (element != max) {
+                            document.getElementById("img" + element + "lg").style.display = "none";
+                            document.getElementById("img" + (element+1) + "lg").style.display = "block";
+                        }
+                        else {
+                            document.getElementById("img" + element + "lg").style.display = "none";
+                            document.getElementById("img" + min + "lg").style.display = "block";
+                        }
+                        return;
+                    } 
+                }
+            }
+            
+//automatic slide                        
+            var slideIndex = 0;
+            showSlides();
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none"; 
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {slideIndex = 1} 
+                slides[slideIndex-1].style.display = "block"; 
+                setTimeout(showSlides, 3000); 
+            }
+            
+//window open
+            function subT(){
+                var x = document.querySelector('input[name="ticket"]:checked').value;
+                window.open(x);
+            }
+            /*
+            function subTicket(t){
+                submit(t);
+            }
+            function submit(t){
+                    var webArray = ["https://www.w3schools.com","https://www.google.com","https://www.baidu.com","https://www.baidu.com"]
+                    window.open(webArray[t-1]);
+                    return;
+            }*/
+            
+        </script>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+    </body>
+</html>
