@@ -3,7 +3,7 @@
 <html>
     
     <head>
-        <title>Arm Candy-25tickets</title>
+        <title>Arm Candy-25tickets-4th</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
@@ -136,7 +136,7 @@
             }
             
     /* custom alert box*/
-            .alertbox {
+            #alertbox {
                 width:400px;
                 position:absolute;
                 top:50%;
@@ -153,7 +153,7 @@
                 display: none;
             }
             
-            .alertbox span{
+            #alertbox span{
                 color:#2ecc71;
                 font-size:40px;
                 display:block;
@@ -283,6 +283,12 @@
                     <span id="demo-1" class="small"></span>
                 </div>
             </div>
+            
+            <div id="alertbox">
+                <img class="rounded p-3" src="armcandy-image/dior.jpg">
+                <h4 class="p-2">Hi, this is your last ticket. <br>Get more tickets to increase the chance of winning <br>YOUR Dior.</h4>
+                <button class="btn-info opacity cursor pt-2 pb-2 pr-3 pl-3 rounded" onclick="closeBox()">Close</button>
+            </div>
        
             <div class="bg-grey d-none d-md-block">
                 <p class="text-center p-3 font-size-26">EVERY TICKET OFFERS YOU A CHANCE TO WIN!</p>
@@ -291,27 +297,21 @@
             <div>
                 <div class="row pb-4">
                     <div class="col-12 col-lg-4 text-center">
-                        <div class="pt-5 mt-4"><iframe width="350" height="196.875" src="https://www.youtube.com/embed/org7gR1odqg?rel=0&autoplay=1&loop=1&playlist=org7gR1odqg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+                        <div class="pt-3 pt-sm-5 mt-4"><iframe width="330" height="185.625" src="https://www.youtube.com/embed/org7gR1odqg?rel=0&autoplay=1&loop=1&playlist=org7gR1odqg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
                     </div>
                     <div class="col-12 col-lg-4">
                         <h4 class="text-center font-weight-bold">GUESS THE SWEETS <br> WIN YOUR Dior</h4>
                         <p class="text-center text-muted"><small>The closest guess to the actual number of sweets <br>WINS the bag!</small></p>
 <!--guess-->                        
-                        <div class="pt-3 pb-3 mt-3 text-center border mx-auto" style="width:300px">
-                            <div id="shake">Your First Guess</div>
+                        <div class="pt-3 pb-3 mt-3 text-center border mx-auto" style="max-width:370px">
+                            <div id="shake">Your <span id="answerNum1">First</span> Guess</div>
                             <span id="answerNum" class="pt-2 pb-2 pr-3 pl-3 mr-2 rounded text-white color-pink small">1</span>
                             <input id="input" style="text" name="ph" placeholder="????" class="text-center text-pink">
                             <button id="add" type="submit" onclick=add() class="pt-1 pb-1 pr-2 pl-2 ml-2 rounded text-white color-pink small border-0 opacity hover-opacity-off cursor">ADD</button>
                         </div>
                         <div class="text-center pt-5">
-                            <button id="playAlertButton" type="button" class="pt-1 pb-1 pr-2 pl-2 ml-2 rounded text-white color-pink border-0 opacity hover-opacity-off cursor" onclick="subT()">Play Your Tickets</button>
+                            <button type="button" class="pt-1 pb-1 pr-2 pl-2 ml-2 rounded text-white color-pink border-0 opacity hover-opacity-off cursor">Play Your Tickets</button>
                         </div>
-                        
-                        <div id="playAlertbox" class="alertbox">
-                            <h5 class="p-2 text-white">Your Tickets Have Submitted Successfully. <br>Get more tickets to increase the chance of winning YOUR Dior.</h5>
-                            <button class="btn-info btn-sm opacity cursor pt-2 pb-2 pr-3 pl-3 rounded" onclick="closePlay()">Close</button>
-                        </div>
-                        
                     </div>
                     <div class="col-12 col-lg-4">
                         <div class="container pt-2 pb-5 pb-lg-0">
@@ -320,7 +320,7 @@
                                     <th colspan="4" class="text-pink">Your Tickets & Play</th>
                                 </tr>
                                 <tr>
-                                    <td class="w-25 p-1"><span id="answer1-1" class="float-left numBorder">1</span> <span id="answer1" onclick=changeAnswer(this) style="font-family: Filson Pro"></span></td> 
+                                    <td class="w-25 p-1"><span id="answer1-1" class="float-left numBorder">1</span> <span id="answer1" onclick=changeAnswer(this)></span></td> 
                                     <td class="w-25 p-1"><span id="answer2-1" class="float-left numBorder">2</span> <span id="answer2" onclick=changeAnswer(this)></span></td>
                                     <td class="w-25 p-1"><span id="answer3-1" class="float-left numBorder">3</span> <span id="answer3" onclick=changeAnswer(this)></span></td>
                                     <td class="w-25 p-1"><span id="answer4-1" class="float-left numBorder">4</span> <span id="answer4" onclick=changeAnswer(this)></span></td>
@@ -446,14 +446,32 @@
                 select.src = 'select20.mp3';
                 select.play();
             }
-//guess
+            
+            function closeBox() {
+                if (document.getElementById("alertbox").style.display = "block"){
+                    document.getElementById("alertbox").style.display = "none";
+                }
+            }
+            
+//guess    
+            var g_answerArr = []; //gloable variable
             function add(){
                 var strval = document.getElementById("input").value;
                 var value = parseInt(strval);
+                var a = ['','First ','Second ','Third ','Fourth ', 'Fifth ','Sixth ','Seventh ','Eighth ','Nine ','Tenth ','Eleventh ','Twelfth ','Thirteenth ','Fourteenth ','Fifteenth ','Sixteenth ','Seventeenth ','Eighteenth ','Nineteenth ','Twentieth ','Twenty-first ','Twenty-second ','Twenty-third ','Twenty-fourth ','Twenty-fifth '];
+                
+                var n = g_answerArr.includes(value);
+                console.log(g_answerArr);
                 
                 if (isNaN(value) || value < 1 || strval.length > 4){
                     document.getElementById("input").value = "";
-                    alert("'" + strval + "' is not a valid number");
+                    alert("' " + strval + " ' is not a valid number");
+                    return;
+                }
+                
+                if (n === true){
+                    document.getElementById("input").value = "";
+                    alert("'" + strval + "' already entered. Please choose another.");
                     return;
                 }
                 
@@ -461,18 +479,20 @@
                     if (document.getElementById("answer" + answer).innerHTML == ""
                         || document.getElementById("answer" + answer).classList.contains("change-answer")) {
                         document.getElementById("answer" + answer).innerHTML = value;
+                        g_answerArr.push(value);//why the value can not be saved?
                         document.getElementById("answer" + answer + "-1").style.color = "white";
                         document.getElementById("answer" + answer + "-1").style.backgroundColor = "#CA858F";
+                        
+                        document.getElementById("input").value = "";
+                        document.getElementById("answer" + answer).classList.remove("change-answer");
+                        document.getElementById("shake").classList.add("apply-shake");
+                        document.getElementById("answerNum").innerHTML = answer;
+                        document.getElementById("answerNum1").innerHTML = a[answer];
                         
                         if (document.getElementById("answer" + (answer+1)).innerHTML == '') {
                             document.getElementById("answer" + (answer+1) + "-1").style.color = "#CA858F";
                             document.getElementById("answer" + (answer+1) + "-1").style.backgroundColor = "white";
                         }
-                        
-                        document.getElementById("input").value = "";
-                        document.getElementById("answerNum").innerHTML = answer;
-                        document.getElementById("answer" + answer).classList.remove("change-answer");
-                        document.getElementById("shake").classList.add("apply-shake");
                         return;
                     }  
                 }
@@ -482,37 +502,14 @@
                 document.getElementById("input").value = element.innerHTML;
                 element.classList.add("change-answer");
             }
+
+//remove the shake after 1 second            
+            var $post = $("#shake");
+
+            setInterval(function() {
+                $post.removeClass("apply-shake");
+            }, 1000);
            
-//disableButtons    ???    
-            window.onload = function() {
-                disableButtons();
-            }
-            
-            function disableButtons() {
-                
-                var disablePlayButton = false;
-                
-                for (var answer = 1; answer <= 25; answer++){
-                    if (document.getElementById("answer" + answer).innerHTML != '') {
-                        disablePlayButton = true;
-                    }
-                }
-                
-                document.getElementById("playAlertButton").disabled = disablePlayButton;
-            }
-                
-//submit all the guesses          
-            function subT() {
-                document.getElementById("playAlertbox").style.display = "block";
-                disableButtons();
-            }
-            
-            function closePlay() {
-                if (document.getElementById("playAlertbox").style.display = "block"){
-                    document.getElementById("playAlertbox").style.display = "none";
-                }
-            }
-            
 //count down timer
             // Set the date we're counting down to
             var countDownDate = new Date("2018-10-15T24:00:00").getTime();
